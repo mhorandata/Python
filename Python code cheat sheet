@@ -1,0 +1,105 @@
+abs: Returns the absolute value of a number.
+all: Checks if all elements in an iterable are true.
+and: A logical operator for combining conditions (logical AND).
+any: Checks if any element in an iterable is true.
+as: Used for aliasing when importing modules or renaming variables.
+assert: Used for debugging, raises an exception if a condition is false.
+async: Indicates that a function is asynchronous.
+await: Used in async functions to pause execution until an asynchronous task is completed.
+bin: Converts an integer to a binary string.
+bool: Represents a Boolean value (either True or False).
+break: Exits a loop prematurely.
+bytearray: Represents a mutable sequence of bytes.
+bytes: Represents an immutable sequence of bytes.
+callable: Checks if an object is callable.
+chr: Converts an ASCII value to its corresponding character.
+class: Defines a class.
+compile: Transforms a source code into a code object.
+complex: Defines a complex number.
+continue: Skips the rest of the current iteration in a loop.
+del: Deletes a reference to an object.
+delattr: Deletes an attribute of an object.
+dict: Represents a dictionary data type.
+dir: Lists the attributes and methods of an object.
+divmod: Returns the quotient and remainder of division.
+elif: Used in conditional statements as "else if."
+else: Specifies the code to run if a condition is not met.
+enumerate: Iterates over elements with their index.
+eval: Evaluates a Python expression as a string.
+exec: Executes Python code dynamically.
+exit: Exits the current program.
+False: A Boolean value representing false.
+finally: Ensures a block of code is executed, regardless of exceptions.
+float: Represents floating-point numbers.
+for: Iterates over a sequence.
+format: Formats a value into a specified representation.
+from: Imports specific attributes or functions from a module.
+frozenset: Defines an immutable set.
+global: Declares a global variable.
+getattr: Retrieves an attribute of an object.
+globals: Returns a dictionary of global symbols.
+hasattr: Checks if an object has a specific attribute.
+hash: Returns the hash value of an object.
+help: Provides information about a function, method, or object.
+id: Returns the unique identifier of an object.
+if: Executes code based on a condition.
+import: Imports a module.
+in: Checks for membership in a sequence.
+int: Converts a value to an integer.
+isinstance: Checks if an object is an instance of a class.
+issubclass: Checks if a class is a subclass of another.
+is: Checks if two objects are the same.
+lambda: Creates anonymous functions.
+len: Returns the length of a sequence.
+list: Defines a list data type.
+locals: Returns a dictionary of local variables.
+map: Applies a function to each element of an iterable.
+max: Returns the maximum value from an iterable.
+memoryview: Represents a view of an object's memory.
+min: Returns the minimum value from an iterable.
+next: Retrieves the next item from an iterator.
+None: A special value representing the absence of a value.
+nonlocal: Declares a variable as non-local.
+not: A logical operator for negating conditions (logical NOT).
+object: The base class for all Python objects.
+oct: Converts an integer to an octal string.
+open: Opens a file for reading or writing.
+or: A logical operator for combining conditions (logical OR).
+ord: Returns the Unicode code point for a character.
+pass: Placeholder for empty code blocks.
+pow: Raises a number to a specified power.
+property: Defines getter, setter, and deleter methods for attributes.
+quit: Exits the current program.
+range: Generates a sequence of numbers.
+return: Specifies the return value of a function.
+round: Rounds a floating-point number to a specified precision.
+set: Defines a set data type.
+setattr: Sets the value of an attribute of an object.
+slice: Creates a slice object for sequences.
+sorted: Returns a sorted version of an iterable.
+staticmethod: Defines a static method within a class.
+str: Converts a value to a string.
+super: Calls a method from a parent class.
+switch: A control flow statement that selects one of many code blocks to execute.
+True: A Boolean value representing true.
+try: Defines a block of code to be tested for exceptions.
+tuple: Defines an immutable tuple data type.
+type: Returns the type of an object.
+vars: Returns the dictionary of an object's attributes.
+while: Creates a loop that continues while a condition is true.
+with: Used for resource management.
+yield: Used in generators to produce a value.
+abs: Returns the absolute value of a number.
+bin: Converts an integer to a binary string.
+chr: Converts an ASCII value to its corresponding character.
+complex: Defines a complex number.
+dir: Lists the attributes and methods of an object.
+enumerate: Iterates over elements with their index.
+float: Represents floating-point numbers.
+format: Formats a value into a specified representation.
+hex: Converts an integer to a hexadecimal string.
+id: Returns the unique identifier of an object.
+int: Converts a value to an integer.
+len: Returns the length of a sequence.
+list: Defines a list data type.
+map: Applies a function to each element of an iterable.
