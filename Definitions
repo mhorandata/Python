@@ -1,0 +1,267 @@
+Python: Python is a high-level, interpreted programming language known for its readability and simplicity.
+
+Interpreter: Python uses an interpreter, a program that executes code line by line, making it suitable for rapid development.
+
+Variable: A variable is a named storage location that holds data or values.
+
+Data Type: Data types in Python define the type of data a variable can hold, e.g., int, float, str.
+
+List: A list is an ordered collection of items that can contain various data types.
+
+Tuple: Tuples are similar to lists but are immutable, meaning their elements cannot be changed.
+
+Dictionary: A dictionary is a collection of key-value pairs, also known as mappings.
+
+Conditional Statements: Conditional statements like if, elif, and else are used to make decisions in code execution.
+
+Loop: Loops, such as for and while, are used for repetitive tasks in Python.
+
+Function: A function is a block of reusable code that performs a specific task.
+
+Module: A module is a file containing Python code, which can be reused in other programs.
+
+Library: A library is a collection of modules that provide pre-defined functions and classes.
+
+Exception: An exception is an event that disrupts the normal flow of a program.
+
+String: A string is a sequence of characters enclosed in single or double quotes.
+
+Integer: An integer is a whole number without a fractional part.
+
+Float: A float is a number with a decimal point.
+
+Boolean: Booleans represent True or False values.
+
+Syntax Error: A syntax error occurs when the code violates Python's rules.
+
+Indentation: Python uses indentation to define code blocks, improving readability.
+
+Method: A method is a function associated with an object, e.g., string methods.
+
+Lambda Function: A lambda function is an anonymous, small function defined using the lambda keyword.
+
+List Comprehension: List comprehension is a concise way to create lists.
+
+Recursion: Recursion is a technique where a function calls itself.
+
+Global Variable: A global variable is accessible from any part of the code.
+
+Local Variable: A local variable is only accessible within a specific function or block.
+
+Import Statement: The import statement is used to access modules and libraries.
+
+Mutable: A mutable object can be modified after creation, like lists.
+
+Immutable: An immutable object cannot be changed after creation, like tuples.
+
+File Handling: Python allows reading and writing files with file handling.
+
+Binary Data: Binary data represents information in a binary format, often used in file handling.
+
+Exception Handling: Exception handling manages errors gracefully.
+
+API: An API (Application Programming Interface) allows different software components to interact.
+
+Class: A class is a blueprint for creating objects in object-oriented programming.
+
+Inheritance: Inheritance allows a class to inherit attributes and methods from another class.
+
+Polymorphism: Polymorphism allows objects of different classes to be treated as objects of a common base class.
+
+Module: In Python, a module is a separate file containing Python statements and definitions, which can be imported and used in other Python scripts.
+
+Object-Oriented Programming (OOP): OOP is a programming paradigm in Python where code is organized around objects, which represent real-world entities.
+
+Encapsulation: Encapsulation is the concept of bundling data (attributes) and methods (functions) that operate on that data into a single unit, known as a class.
+
+Polymorphism: Polymorphism allows different objects to respond to the same method or function in a way that is specific to their individual class.
+
+Abstraction: Abstraction is the process of simplifying complex systems by breaking them into smaller, more manageable parts. In Python, classes and functions are often used to create abstractions.
+
+Operator Overloading: Operator overloading in Python allows you to define the behavior of operators like +, -, and * for custom objects by implementing special methods like __add__ and __mul__.
+
+List Slicing: List slicing is a technique in Python that allows you to extract a portion of a list by specifying a range, e.g., my_list[2:5].
+
+Generator: A generator is a type of iterable that can be iterated over just once and is created using functions with the yield keyword.
+
+Decorator: Decorators in Python are functions that modify the behavior of other functions or methods.
+
+Regular Expressions: Regular expressions (regex) are powerful tools for pattern matching and searching in strings.
+
+JSON (JavaScript Object Notation): JSON is a lightweight data interchange format used to represent data structures in Python.
+
+API (Application Programming Interface): An API defines a set of rules and protocols that allow different software applications to communicate with each other.
+
+Tuple Unpacking: Tuple unpacking is a way to assign the elements of a tuple to individual variables, making it easy to work with data.
+
+Global Interpreter Lock (GIL): The GIL is a mutex that protects access to Python objects, limiting multi-threading in Python to one thread at a time.
+
+Multi-threading: Multi-threading in Python allows you to run multiple threads concurrently, which can be useful for tasks like I/O operations.
+
+Lambda: A lambda function is a small, anonymous function defined using the lambda keyword.
+
+Type Casting: Type casting is the process of converting a value from one data type to another, e.g., from a string to an integer.
+
+Regular Method: Regular methods in Python classes take the instance as their first argument (usually named self) and are used to perform actions on an instance.
+
+Class Method: Class methods are defined using the @classmethod decorator and take the class as their first argument. They can be called on the class itself.
+
+Static Method: Static methods are defined using the @staticmethod decorator and don't depend on the instance or class.
+
+File I/O: File I/O in Python allows you to read from and write to files on the filesystem.
+
+List Append and Extend: You can add elements to a list using append to add one item or extend to add elements from another iterable.
+
+List Remove and Pop: remove deletes the first occurrence of a value in a list, while pop removes and returns an element at a specified index.
+
+Dictionary Keys and Values: In dictionaries, you can access keys using keys() and values using values() methods.
+
+Exception Types: Python has various built-in exception types like ValueError, TypeError, and KeyError to handle specific error cases.
+
+Pip (Python Package Manager): Pip is a package manager for Python that simplifies the installation of external libraries and packages.
+
+List Concatenation: You can combine two or more lists using the + operator or the extend method.
+
+List Comprehension with Condition: List comprehensions can include conditions to filter or modify elements in a list comprehensively.
+
+Dictionary Comprehension: Like list comprehensions, dictionary comprehensions create dictionaries from iterable data.
+
+Set: A set is an unordered collection of unique elements.
+
+Variable Scope: Python has local and global variable scopes, where local variables are defined within a function, and global variables are defined outside of functions.
+
+Jupyter Notebook: Jupyter Notebook is an interactive environment for Python that allows mixing code, text, and visualizations.
+
+Bitwise Operators: Python supports bitwise operators like &, |, and ^ for performing operations on individual bits of integers.
+
+Recursive Function: A recursive function is a function that calls itself to solve a problem, typically used for tasks like calculating factorials or traversing trees.
+
+Pickle: Pickle is a Python module used to serialize and deserialize Python objects, making it easy to store and retrieve complex data structures.
+
+Set: A set is an unordered collection of unique elements, used for operations like union and intersection.
+
+Scope: Scope refers to the region in code where a variable is accessible. Python has local and global scopes.
+
+Function Overloading: Function overloading allows defining multiple functions with the same name but different parameters.
+
+Garbage Collection: Garbage collection in Python automatically reclaims memory from objects no longer in use.
+
+List Comprehension with Condition: List comprehensions can include conditions to filter or modify elements in a list comprehensively.
+
+Dictionary Comprehension: Similar to list comprehensions, dictionary comprehensions create dictionaries from iterable data.
+
+Exception Handling with Try and Except: The try-except block is used to handle exceptions and errors gracefully.
+
+Exception Raising: In Python, you can raise exceptions manually using the raise keyword.
+
+Binary Data Handling: Python supports handling binary data, which is often used in file operations and networking.
+
+GUI (Graphical User Interface): GUI libraries like Tkinter enable creating graphical applications in Python.
+
+Lambda Function with Map and Filter: Lambda functions are commonly used with the map and filter functions for quick data transformations.
+
+Regular Expressions in Python: Regular expressions are powerful tools for pattern matching and text processing.
+
+Iterators and Iterables: Iterators and iterables are fundamental for looping through data structures in Python.
+
+JSON Parsing: Python can easily parse and generate JSON data for data exchange.
+
+Decorators in Python: Decorators are functions that modify the behavior of other functions or methods.
+
+Operator Precedence: Python follows a specific order of operations for mathematical and logical operators.
+
+Type Hinting: Type hinting allows specifying the expected data types of variables and function return values.
+
+Virtual Environment (venv): Virtual environments isolate Python environments for project-specific package management.
+
+List Sorting and Reverse: Python lists can be sorted and reversed using built-in methods.
+
+Namedtuple: Namedtuples are a subclass of tuples with named fields for improved readability.
+
+Shallow Copy vs. Deep Copy: Python supports both shallow and deep copying of objects.
+
+Duck Typing: Python follows duck typing, where the type of an object is determined by its behavior, not its class.
+
+Recursion in Data Structures: Recursion is widely used in data structures like trees and graphs for traversal and manipulation.
+
+Assertions: Python assertions are used to check if a condition holds true during program execution.
+
+Immutable Data Types: Apart from tuples, strings and frozensets are also immutable in Python.
+
+Context Managers: Context managers facilitate resource management using the with statement.
+
+Matrix Operations: Libraries like NumPy provide extensive support for matrix operations.
+
+Package Installation: Python packages are installed using package managers like pip or conda.
+
+Concurrency vs. Parallelism: Understanding the difference between concurrency and parallelism in Python.
+
+Bitwise Shift Operators: Python supports left and right bitwise shift operators (<< and >>).
+
+MapReduce: MapReduce is a programming model for processing and generating large data sets.
+
+Type Checking: Python allows checking the type of an object using functions like isinstance.
+
+Software Design Patterns: Familiarity with design patterns like Singleton and Observer used in Python.
+
+Database Integration: Python can connect to databases using libraries like SQLAlchemy.
+
+JIT (Just-In-Time) Compilation: Techniques like Numba enable JIT compilation for performance optimization.
+
+Exception Handling with Try and Except: Exception handling in Python is achieved using the try and except blocks to gracefully manage errors and exceptions.
+
+Exception Raising: In Python, you can raise exceptions manually using the raise keyword to indicate specific error conditions.
+
+Binary Data Handling: Python supports handling binary data, often used in tasks like file operations and network communication.
+
+GUI (Graphical User Interface): Python libraries like Tkinter enable the creation of graphical user interfaces for applications.
+
+Lambda Function with Map and Filter: Lambda functions are commonly used with the map and filter functions for quick data transformations.
+
+Regular Expressions in Python: Regular expressions (regex) are powerful tools for pattern matching and text processing in Python.
+
+Iterators and Iterables: Iterators and iterables are fundamental for looping through data structures and sequences in Python.
+
+JSON Parsing: Python can easily parse and generate JSON data for data exchange.
+
+Decorators in Python: Decorators are functions that modify the behavior of other functions or methods, often used for aspect-oriented programming.
+
+Operator Precedence: Python follows a specific order of operations for mathematical and logical operators, with some operators having higher precedence than others.
+
+Type Hinting: Type hinting allows specifying the expected data types of variables and function return values to improve code clarity and documentation.
+
+Virtual Environment (venv): Virtual environments in Python isolate project-specific environments for package management, allowing different projects to have distinct dependencies.
+
+List Sorting and Reverse: Python provides built-in methods to sort and reverse lists, enabling data organization and manipulation.
+
+Namedtuple: Namedtuples are a subclass of tuples that have named fields, improving the readability of code and data structures.
+
+Shallow Copy vs. Deep Copy: Python supports both shallow and deep copying of objects, allowing for different ways of duplicating data.
+
+Duck Typing: Python follows duck typing, where the type of an object is determined by its behavior, not its class, promoting flexibility and code reusability.
+
+Recursion in Data Structures: Recursion is widely used in data structures like trees and graphs for traversal, searching, and manipulation.
+
+Assertions: Python assertions are used to check if a condition holds true during program execution, aiding in debugging and testing.
+
+Immutable Data Types: Apart from tuples, strings, and frozensets are also immutable data types in Python, meaning their values cannot be changed after creation.
+
+Context Managers: Context managers in Python facilitate resource management using the with statement, ensuring proper cleanup of resources.
+
+Matrix Operations: Libraries like NumPy provide extensive support for matrix operations, making it suitable for scientific computing and data manipulation.
+
+Package Installation: Python packages are installed using package managers like pip or conda, simplifying the installation of external libraries and packages.
+
+Concurrency vs. Parallelism: Understanding the difference between concurrency (dealing with multiple tasks in overlapping time periods) and parallelism (simultaneously executing multiple tasks) is crucial for efficient Python programming.
+
+Bitwise Shift Operators: Python supports left (<<) and right (>>) bitwise shift operators for performing operations on individual bits of integers.
+
+MapReduce: MapReduce is a programming model and processing framework used for distributing and processing large data sets, often used in big data applications.
+
+Type Checking: Python allows checking the type of an object using functions like isinstance to ensure data integrity and compatibility.
+
+Software Design Patterns: Familiarity with design patterns like Singleton and Observer is essential for structuring and organizing Python code efficiently.
+
+Database Integration: Python can connect to databases using libraries like SQLAlchemy, enabling interaction with relational databases.
+
+JIT (Just-In-Time) Compilation: Techniques like Numba enable JIT compilation for performance optimization, allowing Python code to run faster.
