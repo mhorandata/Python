@@ -16,46 +16,53 @@ word_set = set(word)
 
 # Main game loop
 while attempts < max_attempts:
-    # Display the current state of the word with underscores for unrevealed letters
-    display_word = ""
-    for letter in word:
-        if letter in guesses:
-            display_word += letter
-        else:
-            display_word += "_"
-    print(display_word)
-
-    # Ask the player for a guess
-    guess = input("Guess a letter: ").lower()
-
-    # Check if the guess is a single letter
-    if len(guess) != 1 or not guess.isalpha():
-        print("Please enter a single letter.")
-        continue
-
-    # Check if the guess has already been guessed
-    if guess in guesses:
-        print("You've already guessed that letter.")
-        continue
-
-    # Add the guess to the list of guesses
-    guesses += guess
-
-    # Check if the guess is in the word
-    if guess in word_set:
-        print("Good guess!")
+  # Display the current state of the word with underscores for unrevealed letters
+  display_word = ""
+  for letter in word:
+    if letter in guesses:
+      display_word += letter
     else:
-        print("Wrong guess.")
-        attempts += 1
+      display_word += "_"
+  print(display_word)
 
-    # Check if the player has won
-    if set(guesses) >= word_set:
-        print("Congratulations! You've guessed the word: " + word)
-        break
+  # Ask the player for a guess
+  guess = input("Guess a letter: ").lower()
+
+  # Check if the guess is a single letter
+  if len(guess) != 1 or not guess.isalpha():
+    print("Please enter a single letter.")
+    continue
+
+  # Check if the guess has already been guessed
+  if guess in guesses:
+    print("You've already guessed that letter.")
+    continue
+
+  # Add the guess to the list of guesses
+  guesses += guess
+
+  # Check if the guess is in the word
+  if guess in word_set:
+    print("Good guess!")
+  else:
+    print("Wrong guess.")
+    attempts += 1
+
+  # Check if the player has won
+  if set(guesses) >= word_set:
+    print("Congratulations! You've guessed the word: " + word)
+    break
 
 # Check if the player has run out of attempts
 if attempts == max_attempts:
-    print("You've run out of attempts. The word was: " + word)
+  print("You've run out of attempts. The word was: " + word)
+  print("+---+")
+  print("|   |")
+  print("O   |")
+  print("/|\ |")
+  print("/ \ |")
+  print("=========")
+  print("Game over.")
 
 
 #Breakdown of code:
