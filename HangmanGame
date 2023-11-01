@@ -1,0 +1,155 @@
+import random
+
+# List of words for the game
+word_list = ["python", "java", "javascript", "ruby", "html", "css"]
+
+# Choose a random word from the list
+word = random.choice(word_list)
+
+# Initialize variables
+guesses = ""
+max_attempts = 6  # Number of attempts allowed
+attempts = 0
+
+# Create a set of unique characters in the chosen word
+word_set = set(word)
+
+# Main game loop
+while attempts < max_attempts:
+    # Display the current state of the word with underscores for unrevealed letters
+    display_word = ""
+    for letter in word:
+        if letter in guesses:
+            display_word += letter
+        else:
+            display_word += "_"
+    print(display_word)
+
+    # Ask the player for a guess
+    guess = input("Guess a letter: ").lower()
+
+    # Check if the guess is a single letter
+    if len(guess) != 1 or not guess.isalpha():
+        print("Please enter a single letter.")
+        continue
+
+    # Check if the guess has already been guessed
+    if guess in guesses:
+        print("You've already guessed that letter.")
+        continue
+
+    # Add the guess to the list of guesses
+    guesses += guess
+
+    # Check if the guess is in the word
+    if guess in word_set:
+        print("Good guess!")
+    else:
+        print("Wrong guess.")
+        attempts += 1
+
+    # Check if the player has won
+    if set(guesses) >= word_set:
+        print("Congratulations! You've guessed the word: " + word)
+        break
+
+# Check if the player has run out of attempts
+if attempts == max_attempts:
+    print("You've run out of attempts. The word was: " + word)
+
+
+#Breakdown of code:
+# ```python
+# import random
+# ```
+# - This line imports the `random` module, which is used for random number generation in the game.
+
+# ```python
+# word_list = ["python", "java", "javascript", "ruby", "html", "css"]
+# ```
+# - This line creates a list called `word_list` containing several words that can be used in the Hangman game.
+
+# ```python
+# word = random.choice(word_list)
+# ```
+# - Here, a random word is chosen from the `word_list` using the `random.choice()` function and stored in the variable `word`.
+
+# ```python
+# guesses = ""
+# max_attempts = 6
+# attempts = 0
+# ```
+# - These lines initialize several variables:
+#   - `guesses` stores the letters that the player has guessed.
+#   - `max_attempts` sets the maximum number of incorrect guesses allowed before the player loses the game (6 in this case).
+#   - `attempts` keeps track of how many incorrect guesses the player has made.
+
+# ```python
+# word_set = set(word)
+# ```
+# - This line creates a set, `word_set`, which contains the unique characters in the chosen word. This set will be used to check if the player has guessed all the letters.
+
+# ```python
+# while attempts < max_attempts:
+# ```
+# - This line starts a `while` loop that continues as long as the player hasn't exceeded the maximum allowed attempts.
+
+# ```python
+#     display_word = ""
+#     for letter in word:
+#         if letter in guesses:
+#             display_word += letter
+#         else:
+#             display_word += "_"
+#     print(display_word)
+# ```
+# - Inside the loop, it creates a variable `display_word` that represents the current state of the word to be guessed. It initializes it with underscores for unrevealed letters and prints it to the screen. The loop will continue until the player guesses the entire word or runs out of attempts.
+
+# ```python
+#     guess = input("Guess a letter: ").lower()
+# ```
+# - This line prompts the player to enter a letter as a guess, converts the input to lowercase (to handle uppercase and lowercase guesses consistently), and stores it in the variable `guess`.
+
+# ```python
+#     if len(guess) != 1 or not guess.isalpha():
+#         print("Please enter a single letter.")
+#         continue
+# ```
+# - This section checks if the player entered a single letter. If not, it displays an error message and `continue` goes back to the beginning of the loop for another guess.
+
+# ```python
+#     if guess in guesses:
+#         print("You've already guessed that letter.")
+#         continue
+# ```
+# - This part checks if the player has already guessed the same letter. If they have, it displays a message and continues the loop.
+
+# ```python
+#     guesses += guess
+# ```
+# - If the guess is valid and hasn't been guessed before, it is added to the `guesses` string.
+
+# ```python
+#     if guess in word_set:
+#         print("Good guess!")
+#     else:
+#         print("Wrong guess.")
+#         attempts += 1
+# ```
+# - This section checks if the guess is in the `word_set`. If it is, the player made a good guess. Otherwise, it's a wrong guess, and the `attempts` counter is incremented.
+
+# ```python
+#     if set(guesses) >= word_set:
+#         print("Congratulations! You've guessed the word: " + word)
+#         break
+# ```
+# - This part checks if the set of guessed letters (`set(guesses)`) is equal to or contains all the unique letters in the `word_set`. If so, the player has guessed the entire word correctly, and the game is won. It displays a message with the word and exits the loop using `break`.
+
+# ```python
+# if attempts == max_attempts:
+#     print("You've run out of attempts. The word was: " + word)
+# ```
+# - Finally, outside the loop, if the player has reached the maximum allowed attempts without guessing the word, it displays a message indicating that the player has lost and reveals the correct word.
+
+# This code gives a step-by-step breakdown of how a simple Hangman game in Python works, incorporating random word selection and user input handling.
+
