@@ -61,6 +61,7 @@ if attempts == max_attempts:
   print("O   |")
   print("/|\ |")
   print("/ \ |")
+  print("    |")
   print("=========")
   print("Game over.")
 
