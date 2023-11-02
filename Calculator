@@ -1,0 +1,65 @@
+import math
+
+
+def calculator():
+  result = 0
+  while True:
+    try:
+      if result == 0:
+        print("+ for addition")
+        print("- for subtraction")
+        print("* for multiplication")
+        print("/ for division")
+        print("^ for square root")
+        expression = input("Enter an expression: ")
+        if "(" in expression or ")" in expression:
+          raise ValueError("Invalid input: parentheses not supported")
+        expression = expression.replace("^", "**0.5")
+        result = eval(expression)
+      else:
+        expression = input(
+            f"Enter an expression using {result} as the previous result: ")
+        if "(" in expression or ")" in expression:
+          raise ValueError("Invalid input: parentheses not supported")
+        expression = expression.replace("^", "**0.5")
+        expression = expression.replace("ans", str(result))
+        result = eval(expression)
+      print(f"The result is: {result}")
+    except ValueError as e:
+      print(f"Invalid input: {e}")
+      print("Please use only the following symbols for equations:")
+      print("+ for addition")
+      print("- for subtraction")
+      print("* for multiplication")
+      print("/ for division")
+      print("^ for square root")
+    except ZeroDivisionError as e:
+      print(f"Invalid input: {e}")
+    except Exception as e:
+      print(f"An error occurred: {e}")
+    finally:
+      choice = input("Do you want to continue? (y/n): ")
+      if choice.lower() != "y":
+        result = 0
+        break
+  return result
+
+
+calculator()
+# Code explanation:
+# import math imports the math module, which provides access to mathematical functions.
+# def calculator(): defines a function called calculator.
+# result = 0 initializes the variable result to 0.
+# while True: starts an infinite loop.
+# try: starts a block of code that may raise an exception.
+# if result == 0: checks if result is equal to 0. If it is, it prints out a list of valid operators and prompts the user to enter an expression.
+# else: executes if result is not equal to 0. It prompts the user to enter an expression using the previous result as a starting point.
+# expression = input("Enter an expression: ") prompts the user to enter an expression.
+# if "(" in expression or ")" in expression: checks if the user entered parentheses in their expression. If they did, it raises a ValueError with the message “Invalid input: parentheses not supported”.
+# expression = expression.replace("^", "**0.5") replaces any instances of the ^ symbol with **0.5, which is equivalent to taking the square root of a number.
+# expression = expression.replace("ans", str(result)) replaces any instances of the string "ans" with the value of the previous calculation stored in result.
+# result = eval(expression) evaluates the user’s expression and stores the result in the variable result.
+# print(f"The result is: {result}") prints out the result of the calculation.
+# The three except blocks handle different types of exceptions that may be raised during execution of the code. They catch and handle exceptions raised by invalid inputs, division by zero, and other errors respectively.
+# The finally block executes after all other blocks have executed. It prompts the user to continue or stop calculating and resets or exits the loop accordingly.
+# The function returns the final value of result.
