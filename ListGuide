@@ -69,5 +69,3 @@
 # for item in my_list:
 #     print(item)  # Prints each element in the list
 # ```
-
-# This should give you a comprehensive understanding of lists in Python, including how to create, update, and manipulate them. If you have any specific questions or need more details about any of these operations, feel free to ask!
