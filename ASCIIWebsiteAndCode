@@ -1,0 +1,41 @@
+#Note 1 some ASCII characters may be off a little and may require some adjustment (see below vs when printed out for an example).
+#Note 2 This code will automatically open a website to the ASCII creator website.
+print("Please make the console full screen to see the ASCII message")
+text = '''
+
+___________                              __      __  .__    .__                       ___.          .__  __              
+\__    ___/______ ___.__.   ____  __ ___/  |_  _/  |_|  |__ |__| ______ __  _  __ ____\_ |__   _____|__|/  |_  ____   /\ 
+  |    |  \_  __ <   |  |  /  _ \|  |  \   __\ \   __\  |  \|  |/  ___/ \ \/ \/ // __ \| __ \ /  ___/  \   __\/ __ \  \/ 
+  |    |   |  | \/\___  | (  <_> )  |  /|  |    |  | |   Y  \  |\___ \   \     /\  ___/| \_\ \\___ \ |  ||  | \  ___/  /\  
+  |____|   |__|   / ____|  \____/|____/ |__|    |__| |___|  /__/____  >   \/\_/  \___  >___  /____  >__||__|  \___  > \/ 
+                  \/                                      \/        \/               \/    \/     \/              \/     
+
+'''
+print(text)
+
+import os
+
+link_text = "ASCII Website"
+link_url = "https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Try%20out%20this%20website%3A"
+
+os.startfile(link_url)
+
+#ASCII, which stands for "American Standard Code for Information Interchange," is a character encoding standard used in computers and programming. It was initially developed in the early days of computing to standardize the representation of text characters and control characters. ASCII uses 7-bit binary numbers to represent various characters, with values ranging from 0 to 127.
+
+# Here's a brief explanation of ASCII and its uses in programming:
+
+# 1. Character Representation: ASCII assigns a unique numerical value to each character, including letters, numbers, punctuation marks, and control characters. For example, the ASCII value for the letter 'A' is 65, and the ASCII value for 'a' is 97. This standardization allows computers to store and process text in a consistent manner.
+
+# 2. Text Communication: ASCII is fundamental for encoding and decoding text in programming. It ensures that text data is interpreted consistently across different systems and programming languages, making it essential for tasks like reading and writing text files, displaying text on screens, and transmitting text over networks.
+
+# 3. Input and Output: When you enter text using a keyboard or display it on a screen, ASCII is used to encode and decode the characters. This ensures that the text you see and input is correctly processed by the computer.
+
+# 4. Control Characters: ASCII includes control characters (e.g., newline, tab, carriage return) that are used for formatting and controlling the flow of text. These control characters help programmers manage the layout and structure of text in their applications.
+
+# 5. Interoperability: ASCII provides a common character encoding that enables data interchange between different systems and software. It ensures that text data can be transferred and processed without issues, making it a crucial component for data exchange in various applications.
+
+# 6. File Encoding: Many text files, including source code files, configuration files, and data files, are encoded using ASCII or its extended versions (e.g., UTF-8). This encoding allows programmers to read and modify text files in a straightforward manner.
+
+# 7. Debugging and Testing: ASCII is often used in debugging and testing because it provides a human-readable representation of data. Programmers can inspect the ASCII representation of data to identify issues and verify the correctness of their programs.
+
+# In summary, ASCII is a character encoding standard used in programming to represent text characters and control characters in a consistent and standardized way. Its primary purpose is to ensure that text data can be accurately processed, displayed, and communicated across different systems and programming environments.
