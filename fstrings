@@ -14,7 +14,8 @@
 # My name is John and I am 25 years old.
 # ```
 
-# F-strings are useful when you want to include variables or expressions inside a string. They can be especially helpful when you need to format user input as part of a string. For example, if you want to ask a user for their name and then use that name in a message, you could use an f-string like this:
+# F-strings are useful when you want to include variables or expressions inside a string. They can be especially helpful when you need to format user input as part of a string. 
+#For example, if you want to ask a user for their name and then use that name in a message, you could use an f-string like this:
 
 # ```python
 # name = input("What is your name? ")
