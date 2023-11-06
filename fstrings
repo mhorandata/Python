@@ -1,0 +1,38 @@
+# **F-strings** are a way to format strings in Python 3.6 and later versions. They are a concise and readable way to embed expressions inside string literals for formatting. To create an f-string, prefix the string with the letter `f`. The string itself can be formatted in much the same way that you would with `str.format()`. 
+
+# Here is an example of an f-string:
+
+# ```python
+# name = "John"
+# age = 25
+# print(f"My name is {name} and I am {age} years old.")
+# ```
+
+# This will output:
+
+# ```
+# My name is John and I am 25 years old.
+# ```
+
+# You can also use expressions inside the curly braces to perform operations or call functions. Here is an example:
+
+# ```python
+# num1 = 10
+# num2 = 20
+# print(f"The sum of {num1} and {num2} is {num1 + num2}.")
+# ```
+
+# This will output:
+
+# ```
+# The sum of 10 and 20 is 30.
+# ```
+
+# I hope this helps! Let me know if you have any other questions.
+
+# Source: Conversation with Bing, 11/6/2023
+# (1) Python's F-String for String Interpolation and Formatting. https://realpython.com/python-f-strings/.
+# (2) Python f Strings: The Ultimate Guide | Career Karma. https://careerkarma.com/blog/python-f-string/.
+# (3) Python f-String Tutorial – String Formatting in Python Explained with .... https://www.freecodecamp.org/news/python-f-strings-tutorial-how-to-use-f-strings-for-string-formatting/.
+# (4) PEP 701 – Syntactic formalization of f-strings | peps.python.org. https://peps.python.org/pep-0701/.
+# (5) f-strings in Python - GeeksforGeeks. https://www.geeksforgeeks.org/formatted-string-literals-f-strings-python/.
