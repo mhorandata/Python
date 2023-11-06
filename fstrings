@@ -1,3 +1,14 @@
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#f string example:
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+age = input("How old are you? ")
+print(f"You are {age} years old!")
+
+#When you run this code, it will ask the user for their age and then return a message that says “You are X years old”, where X is the value that the user entered.
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#f string info
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #**F-strings** are a way to format strings in Python 3.6 and later versions. They are a concise and readable way to embed expressions inside string literals for formatting. To create an f-string, prefix the string with the letter `f`. The string itself can be formatted in much the same way that you would with `str.format()`. 
 
 # For example, let's say you want to print a message that includes a user's name and age. You could use an f-string like this:
