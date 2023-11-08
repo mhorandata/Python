@@ -1,12 +1,22 @@
 import turtle as t
 import time
+import random
 
 # Create a Turtle object and assign it to the variable 'tim'
 tim = t.Turtle()
 
+# Define a list of colors
+colors = ["red", "green", "blue", "purple", "orange", "pink", "yellow", "cyan", "magenta", "brown"]
+
 def draw_shape(num_sides):
+    # Randomly choose a color from the list
+    color = random.choice(colors)
+
     # Calculate the angle for each side based on the number of sides
     angle = 360 / num_sides
+
+    # Set the color
+    tim.pencolor(color)
 
     # Draw the shape
     for _ in range(num_sides):
@@ -14,11 +24,14 @@ def draw_shape(num_sides):
         tim.right(angle)  # Turn the turtle right by the calculated angle
 
 # Example usage:
-draw_shape(3)  # Draw a triangle
-draw_shape(4)  # Draw a square
-draw_shape(5)  # Draw a pentagon
-draw_shape(6)  # Draw a hexagon
-# You can call draw_shape with any number of sides you want.
+#Comment out any shapes you don't want the program to draw.
+draw_shape(3)  # Draw a triangle with a random color
+draw_shape(4)  # Draw a square with a random color
+draw_shape(5)  # Draw a pentagon with a random color
+draw_shape(6)  # Draw a hexagon with a random color
+draw_shape(8)  # Draw an octagon with a random color
+draw_shape(10)  # Draw a decagon with a random color
+# You can keep adding draw_shape calls, and it will randomize the colors.
 
 # Keep the window open until you click on it
 t.exitonclick()
