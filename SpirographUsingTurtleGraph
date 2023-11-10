@@ -1,0 +1,94 @@
+import turtle as t
+import random
+
+tim = t.Turtle()
+t.colormode(255)
+
+def random_color():
+  r = random.randint(0, 255)
+  g = random.randint(0, 255)
+  b = random.randint(0, 255)
+  color = (r, g, b)
+  return color
+
+tim.speed("fastest")
+
+def draw_spirograph(size_of_gap):
+  for _ in range(int(360 / size_of_gap)):
+    tim.color(random_color())
+    tim.circle(100)
+    tim.setheading(tim.heading() + size_of_gap)
+
+draw_spirograph(5)
+
+screen = t.Screen()
+screen.exitonclick()
+
+
+#
+# 1. Importing necessary libraries:
+#    ```python
+#    import turtle as t
+#    import random
+#    ```
+#
+#    This code imports the `turtle` module and renames it as `t`. Additionally, it imports the `random` module.
+#
+# 2. Creating a turtle and setting color mode:
+#    ```python
+#    tim = t.Turtle()
+#    t.colormode(255)
+#    ```
+#
+#    Here, a turtle named `tim` is created, and the color mode is set to 255,
+#    meaning RGB values are used to represent colors.
+#
+# 3. Defining a function to generate a random color:
+#    ```python
+#    def random_color():
+#      r = random.randint(0, 255)
+#      g = random.randint(0, 255)
+#      b = random.randint(0, 255)
+#      color = (r, g, b)
+#      return color
+#    ```
+#
+#    This function, `random_color()`, generates a random RGB color and returns it as a tuple.
+#
+# 4. Setting the turtle's speed:
+#    ```python
+#    tim.speed("fastest")
+#    ```
+#
+#    This line sets the speed of the turtle to the fastest possible.
+#
+# 5. Defining a function to draw a spirograph:
+#    ```python
+#    def draw_spirograph(size_of_gap):
+#      for _ in range(int(360 / size_of_gap)):
+#        tim.color(random_color())
+#        tim.circle(100)
+#        tim.setheading(tim.heading() + size_of_gap)
+#    ```
+#
+#    The function `draw_spirograph(size_of_gap)` draws a spirograph pattern.
+#    It iterates through angles based on the given `size_of_gap`, changes the color using the `random_color()`
+#    function, draws a circle with a radius of 100 units, and then changes the heading of the turtle.
+#
+# 6. Calling the function with a specific gap size:
+#    ```python
+#    draw_spirograph(5)
+#    ```
+#
+#    This line calls the `draw_spirograph` function with a gap size of 5, resulting in a spirograph pattern.
+#
+# 7. Creating a turtle screen and exiting on click:
+#    ```python
+#    screen = t.Screen()
+#    screen.exitonclick()
+#    ```
+#
+#    The code creates a turtle screen, and the program will exit when the user clicks on the screen.
+#
+# In summary, this code uses the turtle graphics library to draw a colorful spirograph pattern
+# with a specified gap size. The colors are randomly chosen for each circle drawn in the pattern.
