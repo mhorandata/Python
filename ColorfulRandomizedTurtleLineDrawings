@@ -1,0 +1,84 @@
+import turtle as t
+import random
+
+tim = t.Turtle()
+t.colormode(255)
+
+# Function to generate a random RGB color
+def random_color():
+    r = random.randint(0, 255)
+    g = random.randint(0, 255)
+    b = random.randint(0, 255)
+    return (r, g, b)
+
+directions = [0, 90, 180, 270]
+tim.pensize(15)
+tim.speed("fastest")
+
+for _ in range(1000):
+    tim.color(random_color())  # Use the random_color function to set the pen color
+    tim.forward(30)
+    tim.setheading(random.choice(directions))
+#
+#     This Python code uses the Turtle graphics library to create a drawing with a turtle.
+#     Let's break down the code step by step:
+#
+#     1. ** Importing
+#     Libraries: **
+#     ```python
+#     import turtle as t
+#     import random
+#
+#     ```
+#     - The `turtle` module provides turtle graphics primitives in both object - oriented and procedure - oriented
+#     ways. - The `random` module is used for generating random numbers.
+#
+# 2. ** Creating Turtle and Setting Color Mode: **
+# ```python
+# tim = t.Turtle()
+# t.colormode(255)
+# ```
+# - Creates a turtle named `tim`.
+# - `t.colormode(255)` sets the color mode to use values in the range of 0 to 255 for the RGB components.
+#
+# 3. ** Defining a Function to Generate Random RGB Color: **
+# ```python
+#
+#
+# def random_color():
+#     r = random.randint(0, 255)
+#     g = random.randint(0, 255)
+#     b = random.randint(0, 255)
+#     return (r, g, b)
+# function that returns a tuple (list that can't be changed) representing a random RGB color.
+#
+# 4. ** Setting up Turtle Properties: **
+#
+# directions = [0, 90, 180, 270]
+# tim.pensize(15)
+# - `random_color` is a
+# tim.speed("fastest")
+# ```
+# - `directions` is a list of possible angles(0, 90, 180, 270) that the turtle can turn.
+# - `tim.pensize(15)`
+# sets the width of the turtle's pen to 15.
+# - `tim.speed("fastest")`
+# sets the drawing speed of the turtle to the fastest.
+#
+# 5. ** Drawing
+# Loop: **
+#
+# for _ in range(1000):
+#     tim.color(random_color())
+#     tim.forward(30)
+#     tim.setheading(random.choice(directions))
+# - The loop runs 1000 times.
+# - `tim.color(random_color())`
+# sets the pen color to a random RGB color using the `random_color` function.
+# - `tim.forward(30)`
+# moves the turtle forward by 30 units.
+# - `tim.setheading(random.choice(directions))`
+# sets the turtle's heading to a random angle from the `directions` list.
+#
+# This code essentially makes the turtle draw 1000 lines with random colors and directions,
+# creating an abstract and colorful pattern.
