@@ -1,0 +1,153 @@
+from turtle import Turtle, Screen
+import random
+
+def choose_color():
+    print("Choose a turtle color:")
+    print("1. Red")
+    print("2. Orange")
+    print("3. Yellow")
+    print("4. Green")
+    print("5. Blue")
+    print("6. Purple")
+
+    choice = input("Enter the number corresponding to your choice: ")
+
+    colors = ["red", "orange", "yellow", "green", "blue", "purple"]
+
+    if choice.isdigit() and 1 <= int(choice) <= len(colors):
+        return colors[int(choice) - 1]
+    else:
+        print("Invalid choice. Defaulting to black.")
+        return "black"
+
+is_race_on = False
+
+screen = Screen()
+screen.setup(width=500, height=400)
+
+user_color = choose_color()
+
+all_turtles = []
+
+colors = ["red", "orange", "yellow", "green", "blue", "purple"]
+y_positions = [-70, -40, -10, 20, 50, 80]
+
+for turtle_index in range(0, 6):
+    new_turtle = Turtle(shape="turtle")
+    new_turtle.color(colors[turtle_index])
+    new_turtle.penup()
+    new_turtle.goto(x=-230, y=y_positions[turtle_index])
+    all_turtles.append(new_turtle)
+
+if user_color.lower() in colors:
+    is_race_on = True
+
+while is_race_on:
+    for turtle in all_turtles:
+        rand_distance = random.randint(0, 10)
+        turtle.forward(rand_distance)
+
+        if turtle.xcor() > 230:
+            is_race_on = False
+            winning_color = turtle.pencolor()
+
+            if winning_color == user_color:
+                print(f"You've won! The {winning_color} turtle is the winner!")
+            else:
+                print(f"You've lost! The winning turtle's color was {winning_color}.")
+
+screen.exitonclick()
+
+#
+# ```python
+# from turtle import Turtle, Screen
+# import random
+# ```
+# - These lines import the necessary modules for working with the Turtle graphics and generating random numbers.
+#
+# ```python
+# def choose_color():
+#     print("Choose a turtle color:")
+#     print("1. Red")
+#     print("2. Orange")
+#     print("3. Yellow")
+#     print("4. Green")
+#     print("5. Blue")
+#     print("6. Purple")
+#
+#     choice = input("Enter the number corresponding to your choice: ")
+#
+#     colors = ["red", "orange", "yellow", "green", "blue", "purple"]
+#
+#     if choice.isdigit() and 1 <= int(choice) <= len(colors):
+#         return colors[int(choice) - 1]
+#     else:
+#         print("Invalid choice. Defaulting to black.")
+#         return "black"
+# ```
+# - This function `choose_color` presents a simple text-based menu for the user to choose a color. It prints the available color options, takes user input, and validates the input to ensure it corresponds to a valid color choice. If the input is valid, it returns the chosen color; otherwise, it defaults to black.
+#
+# ```python
+# is_race_on = False
+# ```
+# - This initializes a variable `is_race_on` to `False`, indicating that the race hasn't started yet.
+#
+# ```python
+# screen = Screen()
+# screen.setup(width=500, height=400)
+# ```
+# - These lines create a `Screen` object and set up the screen dimensions.
+#
+# ```python
+# user_color = choose_color()
+# ```
+# - This line calls the `choose_color` function to get the user's color choice and assigns it to the variable `user_color`.
+#
+# ```python
+# all_turtles = []
+# ```
+# - This initializes an empty list `all_turtles` to store the Turtle objects.
+#
+# ```python
+# colors = ["red", "orange", "yellow", "green", "blue", "purple"]
+# y_positions = [-70, -40, -10, 20, 50, 80]
+# ```
+# - These lists define the available turtle colors and their starting y-positions.
+#
+# ```python
+# for turtle_index in range(0, 6):
+#     new_turtle = Turtle(shape="turtle")
+#     new_turtle.color(colors[turtle_index])
+#     new_turtle.penup()
+#     new_turtle.goto(x=-230, y=y_positions[turtle_index])
+#     all_turtles.append(new_turtle)
+# ```
+# - This loop creates six Turtle objects, each with a specific color, and sets their initial positions. The Turtle objects are added to the `all_turtles` list.
+#
+# ```python
+# if user_color.lower() in colors:
+#     is_race_on = True
+# ```
+# - This checks if the user's chosen color is valid by comparing it to the predefined colors. If valid, it sets `is_race_on` to `True`.
+#
+# ```python
+# while is_race_on:
+#     for turtle in all_turtles:
+#         rand_distance = random.randint(0, 10)
+#         turtle.forward(rand_distance)
+#
+#         if turtle.xcor() > 230:
+#             is_race_on = False
+#             winning_color = turtle.pencolor()
+#
+#             if winning_color == user_color:
+#                 print(f"You've won! The {winning_color} turtle is the winner!")
+#             else:
+#                 print(f"You've lost! The winning turtle's color was {winning_color}.")
+# ```
+# - This loop continues the race until one of the turtles crosses a certain x-coordinate threshold. For each iteration, each turtle moves forward a random distance. If a turtle crosses the threshold, the race ends, and the winning color is determined. The result is printed based on whether the user's color matches the winning color.
+#
+# ```python
+# screen.exitonclick()
+# ```
+# - This line ensures that the screen exits on a click after the race is completed.
