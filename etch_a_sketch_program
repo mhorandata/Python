@@ -1,0 +1,112 @@
+from turtle import Turtle, Screen
+
+print("use w,s,a,d to move and c to clear. Click to exit.")
+
+tim = Turtle()
+screen = Screen()
+
+def move_forwards():
+    tim.forward(10)
+    tim.pencolor("red")
+
+def move_backwards():
+    tim.backward(10)
+    tim.pencolor("red")
+
+def turn_left():
+    new_heading = tim.heading() + 10
+    tim.setheading(new_heading)
+
+def turn_right():
+    new_heading = tim.heading() - 10
+    tim.setheading(new_heading)
+
+def clear():
+    tim.clear()
+    tim.penup()
+    tim.home()
+    tim.pendown()
+
+screen.listen()
+screen.onkey(move_forwards, "w")
+screen.onkey(move_backwards, "s")
+screen.onkey(turn_left, "a")
+screen.onkey(turn_right, "d")
+screen.onkey(clear, "c")  # Added a key to clear the screen
+screen.exitonclick()
+
+#
+# ```python
+# from turtle import Turtle, Screen
+# ```
+# - This line imports the `Turtle` class and the `Screen` class from the `turtle` module. These classes are used for creating a turtle graphics window and a turtle object.
+#
+# ```python
+# tim = Turtle()
+# ```
+# - This line creates an instance of the `Turtle` class and assigns it to the variable `tim`. This turtle will be used to draw on the screen.
+#
+# ```python
+# screen = Screen()
+# ```
+# - This line creates an instance of the `Screen` class and assigns it to the variable `screen`. The screen is where the turtle will draw.
+#
+# ```python
+# def move_forwards():
+#     tim.forward(10)
+#     tim.pencolor("red")
+# ```
+# - This defines a function named `move_forwards` that makes the turtle (`tim`) move forward by 10 units when called.
+#      the pencolor("red") makes the line red as it moves
+#
+# ```python
+# def move_backwards():
+#     tim.backward(10)
+#     tim.pencolor("red")
+# ```
+# - This defines a function named `move_backwards` that makes the turtle (`tim`) move backward by 10 units when called.
+#      the pencolor("red") makes the line red as it moves
+#
+# ```python
+# def turn_left():
+#     new_heading = tim.heading() + 10
+#     tim.setheading(new_heading)
+# ```
+# - This defines a function named `turn_left` that changes the turtle's heading (direction it's facing) to the left by 10 degrees.
+#
+# ```python
+# def turn_right():
+#     new_heading = tim.heading() - 10
+#     tim.setheading(new_heading)
+# ```
+# - This defines a function named `turn_right` that changes the turtle's heading to the right by 10 degrees.
+#
+# ```python
+# def clear():
+#     tim.clear()
+#     tim.penup()
+#     tim.home()
+#     tim.pendown()
+# ```
+# - This defines a function named `clear` that clears the turtle's drawing, lifts the pen, moves the turtle to the home position (center of the screen), and puts the pen down.
+#
+# ```python
+# screen.listen()
+# ```
+# - This makes the screen listen for events like key presses.
+#
+# ```python
+# screen.onkey(move_forwards, "w")
+# screen.onkey(move_backwards, "s")
+# screen.onkey(turn_left, "a")
+# screen.onkey(turn_right, "d")
+# screen.onkey(clear, "c")
+# ```
+# - These lines bind the functions to specific keys. When the user presses "w," the `move_forwards` function is called, and similarly for "s," "a," "d," and "c."
+#
+# ```python
+# screen.exitonclick()
+# ```
+# - This allows the program to exit gracefully when you click on the turtle graphics window.
+#
+# I hope this breakdown helps you understand each part of the code. If you have any specific questions or need further clarification on any part, feel free to ask!
