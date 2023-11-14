@@ -1,0 +1,311 @@
+from turtle import Screen, Turtle
+import time
+import random
+
+STARTING_POSITIONS = [(0, 0), (-20, 0), (-40, 0)]
+MOVE_DISTANCE = 20
+FOOD_DISTANCE = 15
+
+class Snake:
+    def __init__(self):
+        self.segments = []
+        self.create_snake()
+        self.head = self.segments[0]
+        self.food = Turtle("circle")
+        self.food.color("red")
+        self.food.shapesize(0.5)
+        self.food.penup()
+        self.refresh_food()
+
+    def create_snake(self):
+        for position in STARTING_POSITIONS:
+            new_segment = Turtle("square")
+            new_segment.color("white")
+            new_segment.penup()
+            new_segment.goto(position)
+            self.segments.append(new_segment)
+
+    def move(self):
+        for seg_num in range(len(self.segments) - 1, 0, -1):
+            new_x = self.segments[seg_num - 1].xcor()
+            new_y = self.segments[seg_num - 1].ycor()
+            self.segments[seg_num].goto(new_x, new_y)
+
+        self.head.forward(MOVE_DISTANCE)
+
+        # Check if the snake has collided with the food
+        if self.head.distance(self.food) < FOOD_DISTANCE:
+            self.refresh_food()
+            self.extend()
+
+        # Check if the snake has collided with its own tail
+        for segment in self.segments[1:]:
+            if self.head.distance(segment) < 15:
+                game_over()
+
+        # Check if the snake has touched the last box attached to its tail (loses the game)
+        if abs(self.head.xcor()) > 290 or abs(self.head.ycor()) > 290:
+            game_over()
+
+    def go_up(self):
+        if self.head.heading() != 270:  # Avoid going directly opposite direction
+            self.head.setheading(90)
+
+    def go_down(self):
+        if self.head.heading() != 90:
+            self.head.setheading(270)
+
+    def go_left(self):
+        if self.head.heading() != 0:
+            self.head.setheading(180)
+
+    def go_right(self):
+        if self.head.heading() != 180:
+            self.head.setheading(0)
+
+    def extend(self):
+        new_segment = Turtle("square")
+        new_segment.color("white")
+        new_segment.penup()
+        self.segments.append(new_segment)
+
+    def refresh_food(self):
+        x_coord = random.randint(-260, 260)
+        y_coord = random.randint(-260, 260)
+        self.food.goto(x_coord, y_coord)
+
+    def reset(self):
+        for segment in self.segments:
+            segment.goto(1000, 1000)  # Move off screen
+        self.segments.clear()
+        self.create_snake()
+        self.head = self.segments[0]
+        self.refresh_food()
+
+def game_over():
+    global game_is_on
+    screen.update()
+    time.sleep(1)  # Pause briefly before showing the game over message
+    screen.clear()
+    screen.bgcolor("black")
+    screen.title("Game Over")
+    screen.tracer(0)
+    screen.update()
+
+    game_is_on = False
+
+    # Print the game over message to the console
+    print("Game Over\nYour Score:", len(snake.segments) - 3)
+
+    # Bind the Enter key to the restart function
+    screen.listen()
+    screen.onkey(snake.reset, "Return")
+
+# Initialize screen and snake
+screen = Screen()
+screen.setup(width=600, height=600)
+screen.bgcolor("black")
+screen.title("My Snake Game")
+screen.tracer(0)
+
+snake = Snake()
+
+# Bind the arrow keys to the snake's movement methods
+screen.listen()
+screen.onkey(snake.go_up, "Up")
+screen.onkey(snake.go_down, "Down")
+screen.onkey(snake.go_left, "Left")
+screen.onkey(snake.go_right, "Right")
+
+# Bind the Enter key to the restart function
+screen.onkey(snake.reset, "Return")
+
+game_is_on = True
+while game_is_on:
+    screen.update()
+    time.sleep(0.1)
+    snake.move()
+
+# The program will exit automatically after the game ends
+
+#
+# ```python
+# from turtle import Screen, Turtle
+# import time
+# import random
+# ```
+# - `from turtle import Screen, Turtle`: Import the `Screen` and `Turtle` classes from the `turtle` module.
+# - `import time`: Import the `time` module for time-related functions.
+# - `import random`: Import the `random` module for generating random numbers.
+#
+# ```python
+# STARTING_POSITIONS = [(0, 0), (-20, 0), (-40, 0)]
+# MOVE_DISTANCE = 20
+# FOOD_DISTANCE = 15
+# ```
+# - `STARTING_POSITIONS`: A list of starting positions for the snake segments.
+# - `MOVE_DISTANCE`: The distance the snake moves in each step.
+# - `FOOD_DISTANCE`: The distance at which the snake detects collision with food.
+#
+# ```python
+# class Snake:
+#     def __init__(self):
+#         self.segments = []
+#         self.create_snake()
+#         self.head = self.segments[0]
+#         self.food = Turtle("circle")
+#         self.food.color("red")
+#         self.food.shapesize(0.5)
+#         self.food.penup()
+#         self.refresh_food()
+# ```
+# - `class Snake:`: Defines a class named `Snake`.
+# - `def __init__(self):`: The constructor method that initializes an instance of the `Snake` class.
+# - `self.segments = []`: List to store the snake segments.
+# - `self.create_snake()`: Method to create the initial snake.
+# - `self.head = self.segments[0]`: Reference to the snake's head.
+# - `self.food = Turtle("circle")`: Turtle object representing the food.
+# - `self.refresh_food()`: Method to position the food on the screen.
+#
+# ```python
+#     def create_snake(self):
+#         for position in STARTING_POSITIONS:
+#             new_segment = Turtle("square")
+#             new_segment.color("white")
+#             new_segment.penup()
+#             new_segment.goto(position)
+#             self.segments.append(new_segment)
+# ```
+# - `def create_snake(self):`: Method to create the initial snake with segments.
+# - Loop through `STARTING_POSITIONS` to create snake segments.
+# - Each segment is a white square `Turtle` object positioned at the specified location.
+#
+# ```python
+#     def move(self):
+#         for seg_num in range(len(self.segments) - 1, 0, -1):
+#             new_x = self.segments[seg_num - 1].xcor()
+#             new_y = self.segments[seg_num - 1].ycor()
+#             self.segments[seg_num].goto(new_x, new_y)
+#
+#         self.head.forward(MOVE_DISTANCE)
+# ```
+# - `def move(self):`: Method to move the snake.
+# - Loop through the snake segments to update their positions based on the previous segment.
+# - Move the head of the snake forward by `MOVE_DISTANCE`.
+#
+# ```python
+#         if self.head.distance(self.food) < FOOD_DISTANCE:
+#             self.refresh_food()
+#             self.extend()
+# ```
+# - Check if the snake's head is close enough to the food.
+# - If true, refresh the food's position and extend the snake.
+#
+# ```python
+#         for segment in self.segments[1:]:
+#             if self.head.distance(segment) < 15:
+#                 game_over()
+# ```
+# - Check if the snake's head collides with any segment of its own body.
+# - If true, trigger the game over function.
+#
+# ```python
+#         if abs(self.head.xcor()) > 290 or abs(self.head.ycor()) > 290:
+#             game_over()
+# ```
+# - Check if the snake's head goes beyond the screen boundaries.
+# - If true, trigger the game over function.
+#
+# ```python
+#     def go_up(self):
+#         if self.head.heading() != 270:
+#             self.head.setheading(90)
+#     def go_down(self):
+#         if self.head.heading() != 90:
+#             self.head.setheading(270)
+#     def go_left(self):
+#         if self.head.heading() != 0:
+#             self.head.setheading(180)
+#     def go_right(self):
+#         if self.head.heading() != 180:
+#             self.head.setheading(0)
+# ```
+# - Methods to change the direction of the snake based on the current heading.
+#
+# ```python
+#     def extend(self):
+#         new_segment = Turtle("square")
+#         new_segment.color("white")
+#         new_segment.penup()
+#         self.segments.append(new_segment)
+# ```
+# - Method to add a new segment to the snake when it eats food.
+#
+# ```python
+#     def refresh_food(self):
+#         x_coord = random.randint(-260, 260)
+#         y_coord = random.randint(-260, 260)
+#         self.food.goto(x_coord, y_coord)
+# ```
+# - Method to randomly reposition the food on the screen.
+#
+# ```python
+#     def reset(self):
+#         for segment in self.segments:
+#             segment.goto(1000, 1000)
+#         self.segments.clear()
+#         self.create_snake()
+#         self.head = self.segments[0]
+#         self.refresh_food()
+# ```
+# - Method to reset the snake's position and create a new game.
+#
+# ```python
+# def game_over():
+#     global game_is_on
+#     screen.update()
+#     time.sleep(1)
+#     screen.clear()
+#     screen.bgcolor("black")
+#     screen.title("Game Over")
+#     screen.tracer(0)
+#     screen.update()
+#
+#     game_is_on = False
+#
+#     print("Game Over\nYour Score:", len(snake.segments) - 3)
+#
+#     screen.listen()
+#     screen.onkey(snake.reset, "Return")
+# ```
+# - Function to handle the game over scenario.
+# - Displays the game over message and the final score.
+# - Listens for the Enter key to restart the game.
+#
+# ```python
+# screen = Screen()
+# screen.setup(width=600, height=600)
+# screen.bgcolor("black")
+# screen.title("My Snake Game")
+# screen.tracer(0)
+#
+# snake = Snake()
+#
+# screen.listen()
+# screen.onkey(snake.go_up, "Up")
+# screen.onkey(snake.go_down, "Down")
+# screen.onkey(snake.go_left, "Left")
+# screen.onkey(snake.go_right, "Right")
+#
+# screen.onkey(snake.reset, "Return")
+#
+# game_is_on = True
+# while game_is_on:
+#     screen.update()
+#     time.sleep(0.1)
+#     snake.move()
+# ```
+# - Initialize the screen and the snake.
+# - Bind arrow keys and Enter key to corresponding functions.
+# - Start the game loop.
+#
