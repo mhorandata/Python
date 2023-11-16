@@ -1,0 +1,211 @@
+from turtle import Turtle, Screen
+import random
+import time
+
+# Constants
+COLORS = ["red", "orange", "yellow", "green", "blue", "purple"]
+STARTING_MOVE_DISTANCE = 5
+MOVE_INCREMENT = 10
+STARTING_POSITION = (0, -280)
+MOVE_DISTANCE_PLAYER = 10
+FINISH_LINE_Y = 280
+FONT = ("Courier", 24, "normal")
+
+# CarManager Class
+class CarManager:
+    def __init__(self):
+        self.all_cars = []
+        self.car_speed = STARTING_MOVE_DISTANCE
+
+    def create_car(self):
+        random_chance = random.randint(1, 6)
+        if random_chance == 1:
+            new_car = Turtle("square")
+            new_car.shapesize(stretch_wid=1, stretch_len=2)
+            new_car.penup()
+            new_car.color(random.choice(COLORS))
+            random_y = random.randint(-250, 250)
+            new_car.goto(300, random_y)
+            self.all_cars.append(new_car)
+
+    def move_cars(self):
+        for car in self.all_cars:
+            car.backward(self.car_speed)
+
+    def level_up(self):
+        self.car_speed += MOVE_INCREMENT
+
+# Player Class
+class Player(Turtle):
+    def __init__(self):
+        super().__init__()
+        self.shape("turtle")
+        self.penup()
+        self.go_to_start()
+        self.setheading(90)
+
+    def go_up(self):
+        self.forward(MOVE_DISTANCE_PLAYER)
+
+    def go_to_start(self):
+        self.goto(STARTING_POSITION)
+
+    def is_at_finish_line(self):
+        return self.ycor() > FINISH_LINE_Y
+
+# Scoreboard Class
+class Scoreboard(Turtle):
+    def __init__(self):
+        super().__init__()
+        self.level = 1
+        self.hideturtle()
+        self.penup()
+        self.goto(-280, 250)
+        self.update_scoreboard()
+
+    def update_scoreboard(self):
+        self.clear()
+        self.write(f"Level: {self.level}", align="left", font=FONT)
+
+    def increase_level(self):
+        self.level += 1
+        self.update_scoreboard()
+
+    def game_over(self):
+        self.goto(0, 0)
+        self.write("GAME OVER", align="center", font=FONT)
+
+# Main Game Logic
+screen = Screen()
+screen.setup(width=600, height=600)
+screen.tracer(0)
+
+player = Player()
+car_manager = CarManager()
+scoreboard = Scoreboard()
+
+screen.listen()
+screen.onkey(player.go_up, "Up")
+
+game_is_on = True
+while game_is_on:
+    time.sleep(0.1)
+    screen.update()
+
+    car_manager.create_car()
+    car_manager.move_cars()
+
+    # Detect collision with car
+    for car in car_manager.all_cars:
+        if car.distance(player) < 20:
+            game_is_on = False
+            scoreboard.game_over()
+
+    # Detect successful crossing
+    if player.is_at_finish_line():
+        player.go_to_start()
+        car_manager.level_up()
+        scoreboard.increase_level()
+
+screen.exitonclick()
+
+# 
+# python
+# Copy code
+# # Constants
+# COLORS = ["red", "orange", "yellow", "green", "blue", "purple"]
+# STARTING_MOVE_DISTANCE = 5
+# MOVE_INCREMENT = 10
+# Constants: These variables store colors for cars, the starting move distance, and the move increment for the game.
+# python
+# Copy code
+# # CarManager Class
+# class CarManager:
+#     def __init__(self):
+#         self.all_cars = []
+#         self.car_speed = STARTING_MOVE_DISTANCE
+# CarManager Class: This class manages cars in the game. The __init__ method initializes the class with an empty list of cars and a starting speed.
+# python
+# Copy code
+#     def create_car(self):
+#         random_chance = random.randint(1, 6)
+#         if random_chance == 1:
+#             new_car = Turtle("square")
+#             new_car.shapesize(stretch_wid=1, stretch_len=2)
+#             new_car.penup()
+#             new_car.color(random.choice(COLORS))
+#             random_y = random.randint(-250, 250)
+#             new_car.goto(300, random_y)
+#             self.all_cars.append(new_car)
+# create_car Method: This method creates a new car with certain conditions using the Turtle graphics library.
+# python
+# Copy code
+#     def move_cars(self):
+#         for car in self.all_cars:
+#             car.backward(self.car_speed)
+# move_cars Method: This method moves all cars backward based on the current speed.
+# python
+# Copy code
+#     def level_up(self):
+#         self.car_speed += MOVE_INCREMENT
+# level_up Method: This method increases the speed of the cars when called.
+# python
+# Copy code
+# # Player Class
+# class Player(Turtle):
+#     def __init__(self):
+#         super().__init__()
+#         self.shape("turtle")
+#         self.penup()
+#         self.go_to_start()
+#         self.setheading(90)
+# Player Class: This class represents the player's turtle in the game. The __init__ method sets up the turtle's initial state.
+# python
+# Copy code
+#     def go_up(self):
+#         self.forward(MOVE_DISTANCE)
+# go_up Method: This method moves the player's turtle upwards.
+# python
+# Copy code
+#     def go_to_start(self):
+#         self.goto(STARTING_POSITION)
+# go_to_start Method: This method resets the player's turtle to the starting position.
+# python
+# Copy code
+#     def is_at_finish_line(self):
+#         if self.ycor() > FINISH_LINE_Y:
+#             return True
+#         else:
+#             return False
+# is_at_finish_line Method: This method checks if the player's turtle has crossed the finish line.
+# python
+# Copy code
+# # Scoreboard Class
+# class Scoreboard(Turtle):
+#     def __init__(self):
+#         super().__init__()
+#         self.level = 1
+#         self.hideturtle()
+#         self.penup()
+#         self.goto(-280, 250)
+#         self.update_scoreboard()
+# Scoreboard Class: This class manages the game's scoreboard. The __init__ method initializes the scoreboard's state.
+# python
+# Copy code
+#     def update_scoreboard(self):
+#         self.clear()
+#         self.write(f"Level: {self.level}", align="left", font=FONT)
+# update_scoreboard Method: This method updates the scoreboard with the current level.
+# python
+# Copy code
+#     def increase_level(self):
+#         self.level += 1
+#         self.update_scoreboard()
+# increase_level Method: This method increases the game level and updates the scoreboard.
+# python
+# Copy code
+#     def game_over(self):
+#         self.goto(0, 0)
+#         self.write(f"GAME OVER", align="center", font=FONT)
+# game_over Method: This method displays "GAME OVER" in the center of the screen.
+# This breakdown covers the main components of the provided code.
