@@ -83,3 +83,17 @@ if __name__ == "__main__":
 #4. Finally, print(contents) prints the content of the file to the console.
 #
 # This code snippet is a common pattern for reading the contents of a text file in Python.
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Original string
+# txt = "I like bananas"
+#
+# # Replace "bananas" with "apples"
+# x = txt.replace("bananas", "apples")
+#
+# # Print the modified string
+# print(x)
+# 
+#1. txt = "I like bananas" initializes a string variable txt with the value "I like bananas".
+#2. x = txt.replace("bananas", "apples") uses the replace() method on the string txt to replace all occurrences of "bananas" with "apples". The result is stored in the variable x.
+#3. Finally, print(x) prints the modified string x to the console.
+# This code demonstrates the use of the replace() method in Python, which is commonly used to replace specific substrings within a string.
