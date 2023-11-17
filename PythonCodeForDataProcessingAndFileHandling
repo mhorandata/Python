@@ -57,3 +57,18 @@ if __name__ == "__main__":
 #6. Error Handling (Optional):
 #
 # Adding error handling with try and except blocks is good practice to handle potential issues during file operations.
+#
+# In Python, file paths are crucial for data processing and file handling. Understanding the difference between relative and absolute paths is essential:
+#
+# Absolute File Path:
+# Describes the full path to a file or directory, starting from the root folder.
+# Example: /home/user/documents/data.txt.
+# Useful when the exact location from the root directory is needed.
+#
+# Relative File Path:
+# Describes the path to a file or directory relative to the current working directory of the Python script.
+# Example: ./documents/data.txt or ../images/picture.jpg.
+# Convenient when referring to files within the project structure.
+# When processing data or handling files in Python, choosing between absolute and relative paths depends on the scenario.
+# If portability across systems is essential, relative paths are often preferred. They make it easier to manage project structures and
+# share code without worrying about specific directory structures.
