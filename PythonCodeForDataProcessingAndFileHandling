@@ -72,3 +72,14 @@ if __name__ == "__main__":
 # When processing data or handling files in Python, choosing between absolute and relative paths depends on the scenario.
 # If portability across systems is essential, relative paths are often preferred. They make it easier to manage project structures and
 # share code without worrying about specific directory structures.
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# with open("/Users/LondonAppBrewery/Desktop/new_file.txt") as file:
+#     contents = file.read()
+#     print(contents)
+#
+#1. The code opens a file located at "/Users/LondonAppBrewery/Desktop/new_file.txt" using the with open(...) statement.
+#2. The as file part assigns the opened file to the variable named file.
+#3. contents = file.read() reads the entire content of the file and stores it in the variable contents.
+#4. Finally, print(contents) prints the content of the file to the console.
+#
+# This code snippet is a common pattern for reading the contents of a text file in Python.
