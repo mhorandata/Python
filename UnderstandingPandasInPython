@@ -74,9 +74,9 @@ print(df.head())
 # print(df.iloc[:, :5])  # Prints the first 5 columns
 # In this example, df.iloc[:, :5] selects all rows (:) and the first 5 columns (:5).
 # Adjust the number in the slice to print the desired number of columns.
-# df.iloc is a method in the Pandas library for data manipulation in Python. It stands for "integer-location based indexing." 
+# df.iloc is a method in the Pandas library for data manipulation in Python. It stands for "integer-location based indexing."
 # This method is primarily used for selecting and indexing DataFrame elements based on their integer position.
-# The .iloc method allows you to access specific rows and columns in a Pandas DataFrame by providing integer-based indices. 
+# The .iloc method allows you to access specific rows and columns in a Pandas DataFrame by providing integer-based indices.
 # It is particularly useful for tasks that involve positional indexing rather than label-based indexing.
 # Here's a basic example of using df.iloc:
 # # Assuming df is your DataFrame
@@ -163,3 +163,185 @@ print(df.head())
 #
 # These combined steps provide a comprehensive guide to both installing Pandas in Visual Studio Code and
 # using it to enhance customer data in an Excel table.
+#--------------------------------------------------------------------------------------------------------------------------------
+# Here are 25 Pandas code snippets for various data manipulation tasks along with short explanations:
+# 
+# Read CSV File:
+# 
+# python
+# Copy code
+# import pandas as pd
+# df = pd.read_csv('filename.csv')
+# Reads a CSV file into a Pandas DataFrame.
+# 
+# View Data:
+# 
+# python
+# Copy code
+# print(df.head())
+# Displays the first 5 rows of the DataFrame.
+# 
+# Filter Rows:
+# 
+# python
+# Copy code
+# df_filtered = df[df['column'] > 10]
+# Filters rows based on a condition.
+# 
+# Select Columns:
+# 
+# python
+# Copy code
+# selected_columns = df[['column1', 'column2']]
+# Selects specific columns from the DataFrame.
+# 
+# Sort DataFrame:
+# 
+# python
+# Copy code
+# df_sorted = df.sort_values(by='column', ascending=False)
+# Sorts the DataFrame based on a column.
+# 
+# Groupby and Aggregate:
+# 
+# python
+# Copy code
+# group_agg = df.groupby('category')['value'].mean()
+# Groups data by a column and calculates the mean.
+# 
+# Handle Missing Values:
+# 
+# python
+# Copy code
+# df_filled = df.fillna(0)
+# Fills missing values with a specified value.
+# 
+# Concatenate DataFrames:
+# 
+# python
+# Copy code
+# df_concat = pd.concat([df1, df2], axis=0)
+# Concatenates two DataFrames vertically.
+# 
+# Merge DataFrames:
+# 
+# python
+# Copy code
+# merged_df = pd.merge(df1, df2, on='key_column')
+# Merges two DataFrames based on a common column.
+# 
+# Apply Function to Column:
+# 
+# python
+# Copy code
+# df['new_column'] = df['old_column'].apply(lambda x: x*2)
+# Applies a function to each element in a column.
+# 
+# Remove Duplicates:
+# 
+# python
+# Copy code
+# df_no_duplicates = df.drop_duplicates()
+# Removes duplicate rows from the DataFrame.
+# 
+# Date Operations:
+# 
+# python
+# Copy code
+# df['date_column'] = pd.to_datetime(df['date_column'])
+# Converts a column to a datetime format.
+# 
+# Extract Year from Date:
+# 
+# python
+# Copy code
+# df['year'] = df['date_column'].dt.year
+# Extracts the year from a date column.
+# 
+# Resample Time Series:
+# 
+# python
+# Copy code
+# df_resampled = df.resample('M').mean()
+# Resamples time series data to monthly frequency.
+# 
+# Pivot Table:
+# 
+# python
+# Copy code
+# pivot_table = pd.pivot_table(df, values='value', index='category', columns='month', aggfunc='mean')
+# Creates a pivot table.
+# 
+# Convert Categorical to Numeric:
+# 
+# python
+# Copy code
+# df['category'] = df['category'].astype('category').cat.codes
+# Converts categorical values to numeric codes.
+# 
+# Apply Function to Entire DataFrame:
+# 
+# python
+# Copy code
+# df.applymap(lambda x: x**2)
+# Applies a function to every element in the DataFrame.
+# 
+# String Operations:
+# 
+# python
+# Copy code
+# df['text_column'] = df['text_column'].str.upper()
+# Converts text to uppercase.
+# 
+# Binning Data:
+# 
+# python
+# Copy code
+# bins = [0, 25, 50, 75, 100]
+# labels = ['Low', 'Mid', 'High', 'Very High']
+# df['bin_column'] = pd.cut(df['value'], bins=bins, labels=labels)
+# Creates bins for numerical data.
+# 
+# Normalize Data:
+# 
+# python
+# Copy code
+# df_normalized = (df - df.min()) / (df.max() - df.min())
+# Normalizes numerical data.
+# 
+# Dummify Categorical Variables:
+# 
+# python
+# Copy code
+# df_dummies = pd.get_dummies(df, columns=['categorical_column'])
+# Converts categorical variables into dummy/indicator variables.
+# 
+# Cumulative Sum:
+# 
+# python
+# Copy code
+# df['cumulative_sum'] = df['value'].cumsum()
+# Calculates the cumulative sum of a column.
+# 
+# Rolling Average:
+# 
+# python
+# Copy code
+# df['rolling_average'] = df['value'].rolling(window=3).mean()
+# Calculates the rolling average of a column.
+# 
+# Shift Columns:
+# 
+# python
+# Copy code
+# df['shifted_column'] = df['value'].shift(1)
+# Shifts values in a column by a specified number of periods.
+# 
+# Export DataFrame to CSV:
+# 
+# python
+# Copy code
+# df.to_csv('output.csv', index=False)
+# Writes the DataFrame to a CSV file.
+# 
+# These snippets cover a range of common Pandas operations for data manipulation.
