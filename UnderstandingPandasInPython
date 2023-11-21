@@ -345,3 +345,65 @@ print(df.head())
 # Writes the DataFrame to a CSV file.
 # 
 # These snippets cover a range of common Pandas operations for data manipulation.
+#--------------------------------------------------------------------------------------------------------------------------------
+# Page 1: Introduction to Pandas in Python
+# Pandas, a versatile Python library, serves as a cornerstone in the realm of data manipulation.
+# Its significance lies in the mastery of two primary data structures: Series and DataFrames.
+# A DataFrame, metaphorically comparable to the functionality of an Excel sheet,
+# emerges as the epicenter of our journey into the intricacies of data handling.
+#
+# Page 2: Sorting in Pandas
+# Delving into the foundational aspects of data analysis, the sort_values() method within Pandas assumes a pivotal role.
+# This method acts as a conductor, orchestrating the arrangement of rows based on user-specified columns.
+# The result is a structured and ordered presentation of the dataset,
+# laying the groundwork for more profound insights and analyses[2].
+#
+# Page 3: Filtering DataFrames
+# Navigating the intricate landscape of data manipulation,
+# the art of filtering emerges as a potent tool. Pandas, equipped with a myriad of functionalities,
+# allows practitioners to employ conditions seamlessly. This empowers them to extract specific subsets of data,
+# honing in on the most pertinent and relevant information.
+#
+# Page 4: Statistical Measures: Mean, Median, and Mode
+# Statistical measures form the bedrock of data exploration,
+# providing glimpses into the central tendencies of datasets.
+# Pandas extends its capabilities through intuitive methods like mean(), median(), and mode(),
+# offering practitioners the means to unravel the underlying patterns and distributions within their data.
+#
+# Page 5: Updating Data Based on Conditions
+# The dynamic nature of data manipulation often calls for the ability to update datasets based on specific conditions.
+# Pandas rises to the occasion, empowering analysts with the apply() function. This function,
+# a versatile tool in the Pandas arsenal, enables the seamless modification of specific elements in the dataset,
+# ensuring it stays in sync with evolving requirements.
+#
+# Page 6: Deleting Rows and Columns
+# Clarity in data representation is paramount, and Pandas acknowledges this by providing the drop() method.
+# This method serves as a potent instrument for eliminating redundant rows or columns, streamlining the dataset
+# and enhancing its coherence and interpretability.
+#
+# Page 7: Saving and Exporting Data
+# As the journey through data analysis progresses, the importance of preserving and sharing insights becomes evident.
+# Pandas facilitates this through its support for various file formats, including Excel and CSV.
+# The to_excel() and to_csv() functions stand as reliable companions,
+# simplifying the process of saving and exporting data for broader consumption.
+#
+# Page 8: Real-world Application: Case Study
+# Applying theoretical knowledge to practical scenarios is the litmus test for proficiency.
+# Let's immerse ourselves in a hypothetical case study involving a dataset of sales records.
+# Here, we aim to employ the full spectrum of Pandas functionalities—sorting, filtering, statistical calculations,
+# updating, and exporting—to derive meaningful insights and drive informed decision-making.
+#
+# Page 9: Advanced Techniques: Grouping and Aggregation
+# As we ascend to advanced levels of data manipulation, Pandas unveils its prowess in grouping and aggregation.
+# The groupby() method, in synergy with aggregation functions, empowers analysts to perform sophisticated analyses,
+# unraveling deeper insights and patterns within complex datasets.
+#
+# Page 10: Conclusion and Recap
+# In this exhaustive exploration of Pandas in Python for data manipulation,
+# we've traversed the spectrum from fundamental concepts to advanced techniques. From sorting and filtering to statistical
+# calculations, updating data, and exporting results, Pandas emerges not just as a tool but as a versatile toolkit.
+# It equips data practitioners with the necessary instruments for effective analysis, providing a comprehensive foundation
+# for navigating the intricacies of the data science landscape. As we conclude this journey,
+# let's recap the key learnings and reflect on the empowerment that Pandas bestows upon us in our quest for data-driven
+# insights and decision-making.
+
