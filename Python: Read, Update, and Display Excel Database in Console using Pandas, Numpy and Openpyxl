@@ -147,8 +147,8 @@ import pandas as pd
 # You can run this in your terminal or command prompt
 # pip install openpyxl
 
-# Specify the absolute path to your own Excel document
-excel_path = os.path.abspath(r'C:\Users\username\FolderNames\ExcelFileName.xlsx')
+# Specify the absolute path to the Excel workbook
+excel_path = os.path.abspath(r'C:\Users\mhora\Desktop\Programming\Python\DataFrameProject\DataFrameProject.xlsx')
 
 # Read existing data from the Excel workbook
 df = pd.read_excel(excel_path, engine='openpyxl', header=None)
@@ -182,82 +182,113 @@ df_updated.index = [f'Row {i + 1}' for i in df_updated.index]
 df_updated.columns = [f'Col {i + 1}' for i in df_updated.columns]
 print(df_updated[['Col 1', 'Col 2']])  # Selecting only columns A and B
 
+# Accept user input for the value to search
+search_value = input("Enter the value to search: ")
 
+# Print the row number for the row with the user-input value in either column
+row_number_col1 = df_updated.index[df_updated['Col 1'] == int(search_value)].tolist()
+row_number_col2 = df_updated.index[df_updated['Col 2'] == int(search_value)].tolist()
+
+if row_number_col1 or row_number_col2:
+    print(f"Row number(s) for the row with value {search_value}: {row_number_col1 + row_number_col2}")
+else:
+    print(f"Value {search_value} not found in the range of data.")
 
 
 
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Explanation:
-#
+
 #1. import os: Imports the Python module "os," which provides a way to interact with the operating system, such as working with file paths.
-#
+
 #2. import pandas as pd: Imports the pandas library with the alias "pd," commonly used for data manipulation and analysis.
-#
-#3. Comment: # Install openpyxl if not already installed: A comment explaining the next line is a command to install the "openpyxl"
-# library if it's not already installed.
-#
+
+#3. Comment: # Install openpyxl if not already installed: A comment explaining the next line is a command to install the "openpyxl" library if it's not already installed.
+
 #4. Command: # pip install openpyxl: A command to install the "openpyxl" library using the pip package manager.
-#
+
 #5. Comment: # Specify the absolute path to the Excel workbook: Describes the following line, which sets the absolute path of the Excel workbook.
-#
-#6. excel_path = os.path.abspath(r'C:\Users\username\FolderNames\ExcelFileName.xlsx'):
+
+#6. excel_path = os.path.abspath(r'C:\Users\mhora\Desktop\Programming\Python\DataFrameProject\DataFrameProject.xlsx'):
 # Defines the absolute path of the Excel workbook using the os module.
-#
+
 #7. Comment: # Read existing data from the Excel workbook: Provides context for the following line, which reads data from the Excel workbook.
-#
+
 #8. df = pd.read_excel(excel_path, engine='openpyxl', header=None): Reads data from the Excel workbook into a pandas DataFrame (df).
 # It uses the openpyxl engine and specifies no headers in the DataFrame.
-#
+
 #9. Comment: # Print the original DataFrame with "Row" and "Col" prefixes, only for columns A and B: Describes the following lines,
 # which format and print the original DataFrame.
-#
+
 #10. print("Original DataFrame:"): Prints a label for the original DataFrame.
-#
+
 #11. df.index = [f'Row {i + 1}' for i in df.index]: Renames the index of the DataFrame, adding "Row" prefix.
-#
+
 #12. df.columns = [f'Col {i + 1}' for i in df.columns]: Renames the columns of the DataFrame, adding "Col" prefix.
-#
+
 #13. print(df[['Col 1', 'Col 2']]): Prints only the selected columns ('Col 1' and 'Col 2') of the DataFrame.
-#
+
 #14. Comment: # Specify the starting row and column to write to in the Excel file: Describes the following lines,
 # which set the starting position for writing to the Excel file.
-#
+
 #15. startrow = 0: Sets the starting row to 0.
-#
+
 #16. startcol = 0: Sets the starting column to 0.
-#
+
 #17. Comment: # Create a variable for the A1 range: Describes the following line, which creates a variable representing the A1 cell.
-#
+
 #18. a1_range = (0, df.columns.get_loc('Col 1')): Creates a tuple (a1_range) with the row and column indices of the A1 cell.
-#
+
 #20. Comment: # Update A1 to 7 using the A1 range: Describes the following line, which updates the value of the A1 cell to 7.
-#
+
 #21. df.iat[a1_range[0], a1_range[1]] = 7: Uses the iat indexer to update the value at the specified A1 cell.
-#
+
 #22. Comment: # Write the updated DataFrame (only columns A and B) to the Excel workbook: Describes the following lines,
 # which write the updated DataFrame to the Excel workbook.
-#
-#23. with pd.ExcelWriter(excel_path, engine='openpyxl', mode='a', if_sheet_exists='replace') as writer::
+
+#23. with pd.ExcelWriter(excel_path, engine='openpyxl', mode='a', if_sheet_exists='replace') as writer:
 # Opens the Excel workbook for writing using the openpyxl engine.
-#
+
 #24. df[['Col 1', 'Col 2']].to_excel(writer, header=None, index=None, startrow=startrow, startcol=startcol):
 # Writes the selected columns of the DataFrame to the Excel file.
-#
+
 #25. Comment: # Read data from the updated Excel workbook, starting from the first row and treating it as data
 # (including headers): Describes the following line, which reads data from the updated Excel workbook.
-#
+
 #26. df_updated = pd.read_excel(excel_path, engine='openpyxl', header=None): Reads data from the updated Excel workbook into a new DataFrame (df_updated).
-#
+
 #27. Comment: # Print the updated DataFrame with "Row" and "Col" prefixes, only for columns A and B:
 # Describes the following lines, which format and print the updated DataFrame.
-#
+
 #28. print("\nUpdated DataFrame:"): Prints a label for the updated DataFrame.
-#
+
 #29. df_updated.index = [f'Row {i + 1}' for i in df_updated.index]: Renames the index of the updated DataFrame, adding "Row" prefix.
-#
+
 #30. df_updated.columns = [f'Col {i + 1}' for i in df_updated.columns]: Renames the columns of the updated DataFrame, adding "Col" prefix.
-#
+
 #31. print(df_updated[['Col 1', 'Col 2']]): Prints only the selected columns ('Col 1' and 'Col 2') of the updated DataFrame.
-#
-#32. This code reads data from an Excel file, updates a specific cell, and then writes the modified data back to the same file.
+
+#32. Comment: # Accept user input for the value to search: Describes the following line, which prompts the user to enter a value for searching.
+
+#33. search_value = input("Enter the value to search: "): Accepts user input and stores it in the variable search_value.
+
+#34. Comment: # Print the row number for the row with the user-input value in either column: Describes the following lines,
+# which search for the entered value in columns 'Col 1' and 'Col 2' and print the corresponding row number(s).
+
+#35. row_number_col1 = df_updated.index[df_updated['Col 1'] == int(search_value)].tolist():
+# Finds the row number(s) where the entered value matches 'Col 1' and converts it to a list.
+
+#36. row_number_col2 = df_updated.index[df_updated['Col 2'] == int(search_value)].tolist():
+# Finds the row number(s) where the entered value matches 'Col 2' and converts it to a list.
+
+#37. if row_number_col1 or row_number_col2: Checks if either of the lists is not empty.
+
+#38. print(f"Row number(s) for the row with value {search_value}: {row_number_col1 + row_number_col2}"):
+# Prints the row number(s) if the value is found in either column.
+
+#39. else: Executes if the entered value is not found in either column.
+
+#40. print(f"Value {search_value} not found in the range of data."): Prints a message indicating that the value is not found.
+
+#41. This code reads data from an Excel file, updates a specific cell, writes the modified data back, and allows the user to search for a value.
 # It also prints the original and updated DataFrames for visualization.
