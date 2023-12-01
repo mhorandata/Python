@@ -147,8 +147,8 @@ import pandas as pd
 # You can run this in your terminal or command prompt
 # pip install openpyxl
 
-# Specify the absolute path to the Excel workbook
-excel_path = os.path.abspath(r'C:\Users\mhora\Desktop\Programming\Python\DataFrameProject\DataFrameProject.xlsx')
+# Specify the absolute path to your own Excel document
+excel_path = os.path.abspath(r'C:\Users\username\FolderNames\ExcelFileName.xlsx')
 
 # Read existing data from the Excel workbook
 df = pd.read_excel(excel_path, engine='openpyxl', header=None)
@@ -200,7 +200,7 @@ print(df_updated[['Col 1', 'Col 2']])  # Selecting only columns A and B
 #
 #5. Comment: # Specify the absolute path to the Excel workbook: Describes the following line, which sets the absolute path of the Excel workbook.
 #
-#6. excel_path = os.path.abspath(r'C:\Users\mhora\Desktop\Programming\Python\DataFrameProject\DataFrameProject.xlsx'):
+#6. excel_path = os.path.abspath(r'C:\Users\username\FolderNames\ExcelFileName.xlsx'):
 # Defines the absolute path of the Excel workbook using the os module.
 #
 #7. Comment: # Read existing data from the Excel workbook: Provides context for the following line, which reads data from the Excel workbook.
