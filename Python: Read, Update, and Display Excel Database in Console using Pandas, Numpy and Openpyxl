@@ -190,11 +190,27 @@ row_number_col1 = df_updated.index[df_updated['Col 1'] == int(search_value)].tol
 row_number_col2 = df_updated.index[df_updated['Col 2'] == int(search_value)].tolist()
 
 if row_number_col1 or row_number_col2:
-    print(f"Row number(s) for the row with value {search_value}: {row_number_col1 + row_number_col2}")
+    print(f"Row number(s) for the row with value {search_value}: {str(row_number_col1 + row_number_col2)}")
 else:
     print(f"Value {search_value} not found in the range of data.")
 
+# Find and print the row number for the maximum value in 'Col 1'
+max_row_col1 = df_updated['Col 1'].idxmax()
+# print(f"Row number for the maximum value in 'Col 1': {str(max_row_col1 + 1)}")
 
+print(f"Row number for the maximum value in 'Col 1': {str(max_row_col1)}")
+
+# Find and print the row number for the minimum value in 'Col 1'
+min_row_col1 = df_updated['Col 1'].idxmin()
+print(f"Row number for the minimum value in 'Col 1': {str(min_row_col1)}")
+
+# Find and print the row number for the maximum value in 'Col 2'
+max_row_col2 = df_updated['Col 2'].idxmax()
+print(f"Row number for the maximum value in 'Col 2': {str(max_row_col2)}")
+
+# Find and print the row number for the minimum value in 'Col 2'
+min_row_col2 = df_updated['Col 2'].idxmin()
+print(f"Row number for the minimum value in 'Col 2': {str(min_row_col2)}")
 
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Explanation:
@@ -292,3 +308,31 @@ else:
 
 #41. This code reads data from an Excel file, updates a specific cell, writes the modified data back, and allows the user to search for a value.
 # It also prints the original and updated DataFrames for visualization.
+
+#42. Comment: # Find and print the row number for the maximum value in 'Col 1': Describes the following lines,
+# which find and print the row number for the maximum value in 'Col 1'.
+
+#43. max_row_col1 = df_updated['Col 1'].idxmax(): Finds the row number with the maximum value in 'Col 1'.
+
+#44. print(f"Row number for the maximum value in 'Col 1': {max_row_col1}"): Prints the row number for the maximum value in 'Col 1'.
+
+#45. Comment: # Find and print the row number for the minimum value in 'Col 1': Describes the following lines,
+# which find and print the row number for the minimum value in 'Col 1'.
+
+#46. min_row_col1 = df_updated['Col 1'].idxmin(): Finds the row number with the minimum value in 'Col 1'.
+
+#47. print(f"Row number for the minimum value in 'Col 1': {min_row_col1}"): Prints the row number for the minimum value in 'Col 1'.
+
+#48. Comment: # Find and print the row number for the maximum value in 'Col 2': Describes the following lines,
+# which find and print the row number for the maximum value in 'Col 2'.
+
+#49. max_row_col2 = df_updated['Col 2'].idxmax(): Finds the row number with the maximum value in 'Col 2'.
+
+#50. print(f"Row number for the maximum value in 'Col 2': {max_row_col2}"): Prints the row number for the maximum value in 'Col 2'.
+
+#51. Comment: # Find and print the row number for the minimum value in 'Col 2': Describes the following lines,
+# which find and print the row number for the minimum value in 'Col 2'.
+
+#52. min_row_col2 = df_updated['Col 2'].idxmin(): Finds the row number with the minimum value in 'Col 2'.
+
+#53. print(f"Row number for the minimum value in 'Col 2': {min_row_col2}"): Prints the row number for the minimum value in 'Col 2'.
