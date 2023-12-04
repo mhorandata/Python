@@ -336,3 +336,93 @@ print(f"Row number for the minimum value in 'Col 2': {str(min_row_col2)}")
 #52. min_row_col2 = df_updated['Col 2'].idxmin(): Finds the row number with the minimum value in 'Col 2'.
 
 #53. print(f"Row number for the minimum value in 'Col 2': {min_row_col2}"): Prints the row number for the minimum value in 'Col 2'.
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------
+import os
+import pandas as pd
+
+# Install openpyxl if not already installed
+# You can run this in your terminal or command prompt
+# pip install openpyxl
+
+# Specify the absolute path to the Excel workbook
+excel_path = os.path.abspath(r'C:\Users\mhora\Desktop\Programming\Python\DataFrameProject\DataFrameProject.xlsx')
+
+# Read existing data from the Excel workbook
+df = pd.read_excel(excel_path, engine='openpyxl', header=None)
+
+# Print the original DataFrame with "Row" and "Col" prefixes, only for columns A and B
+print("Original DataFrame:")
+df.index = [f'Row {i + 1}' for i in df.index]
+df.columns = [f'Col {i + 1}' for i in df.columns]
+print(df[['Col 1', 'Col 2']])  # Selecting only columns A and B
+
+# Prompt the user for a number to update A1
+new_value_a1 = int(input("Enter the number to update A1: "))
+
+# Specify the starting row and column to write to in the Excel file
+startrow = 0
+startcol = 0
+
+# Create a variable for the A1 range and update A1 with the user-input value
+a1_range = (0, df.columns.get_loc('Col 1'))
+df.iat[a1_range[0], a1_range[1]] = new_value_a1
+
+# Write the updated DataFrame (only columns A and B) to the Excel workbook
+with pd.ExcelWriter(excel_path, engine='openpyxl', mode='a', if_sheet_exists='replace') as writer:
+    df[['Col 1', 'Col 2']].to_excel(writer, header=None, index=None, startrow=startrow, startcol=startcol)
+
+# Read data from the updated Excel workbook, starting from the first row and treating it as data (including headers)
+df_updated = pd.read_excel(excel_path, engine='openpyxl', header=None)
+
+# Print the updated DataFrame with "Row" and "Col" prefixes, only for columns A and B
+print("\nUpdated DataFrame:")
+df_updated.index = [f'Row {i + 1}' for i in df_updated.index]
+df_updated.columns = [f'Col {i + 1}' for i in df_updated.columns]
+print(df_updated[['Col 1', 'Col 2']])  # Selecting only columns A and B
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Summary:
+# 1. Import Libraries:
+# import os
+# import pandas as pd
+# The code imports the operating system library (os) for file path operations and the Pandas library (pd) for data manipulation and analysis.
+#
+#2. Specify Excel File Path:
+# excel_path = os.path.abspath(r'C:\Users\mhora\Desktop\Programming\Python\DataFrameProject\DataFrameProject.xlsx')
+# Sets the absolute path to the Excel workbook using the os.path.abspath function.
+#
+#3. Read Data from Excel:
+# df = pd.read_excel(excel_path, engine='openpyxl', header=None)
+# Reads existing data from the Excel workbook into a Pandas DataFrame.
+#
+#4. Print Original DataFrame:
+# print("Original DataFrame:")
+# df.index = [f'Row {i + 1}' for i in df.index]
+# df.columns = [f'Col {i + 1}' for i in df.columns]
+# print(df[['Col 1', 'Col 2']])
+# Prints the original DataFrame with "Row" and "Col" prefixes for columns A and B.
+#
+#5. Prompt User for Input:
+# new_value_a1 = int(input("Enter the number to update A1: "))
+# Prompts the user to enter a number to update the value in cell A1.
+#
+#6. Update A1 in DataFrame:
+# a1_range = (0, df.columns.get_loc('Col 1'))
+# df.iat[a1_range[0], a1_range[1]] = new_value_a1
+# Determines the location of 'Col 1' and updates the value in cell A1 with the user-input number.
+#
+#7. Write Updated DataFrame to Excel:
+# with pd.ExcelWriter(excel_path, engine='openpyxl', mode='a', if_sheet_exists='replace') as writer:
+#     df[['Col 1', 'Col 2']].to_excel(writer, header=None, index=None, startrow=startrow, startcol=startcol)
+# Writes the updated DataFrame (only columns A and B) to the Excel workbook.
+#
+#8. Read Updated Data from Excel:
+# df_updated = pd.read_excel(excel_path, engine='openpyxl', header=None)
+# Reads data from the updated Excel workbook into a new Pandas DataFrame.
+#
+#9. Print Updated DataFrame:
+# print("\nUpdated DataFrame:")
+# df_updated.index = [f'Row {i + 1}' for i in df_updated.index]
+# df_updated.columns = [f'Col {i + 1}' for i in df_updated.columns]
+# print(df_updated[['Col 1', 'Col 2']])
+# Prints the updated DataFrame with "Row" and "Col" prefixes for columns A and B.
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------
