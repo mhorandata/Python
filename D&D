@@ -1,0 +1,72 @@
+#Dungeons and Dragons code randomizer
+#This code is to practice coding and to potentially help with playing the game dungeons and dragons.
+#------------------------------------------------------------------------------------------------------------
+# import random allows you to use randomized data.
+# random.randint below is used for randomizing integers.
+
+import random
+#------------------------------------------------------------------------------------------------------------
+#There should only be one import random. If the one at the top is missing or commented out uncomment this one
+#when using this code.
+# import random
+
+# Generate a random integer once (only rolls the dice one time to generate a number between 1 and 20).
+
+# mylist = [random.randint(1, 20)]
+# print(mylist)
+#------------------------------------------------------------------------------------------------------------
+#This longer version is for if you want the dice to roll more than once.
+#In Python, the "def" keyword is used to define functions.
+# Functions are blocks of reusable code that perform a specific task.
+# When you see "def" in code, it signifies the beginning of a function definition.
+
+# def fucntname():
+#     return random.randint(1, 2)
+
+# This is where the list is created and the range of random numbers from 1 to 20 is selected.
+
+# mylist = [random.randint(1, 20) for _ in range(fucntname())]
+# This prints or displays the results in the console.
+
+# print(mylist)
+#------------------------------------------------------------------------------------------------------------
+# Comment import random out if it is uncommented at the top.
+
+import random
+
+#The funciton get_under_input is created here. It asks the user to enter an integer number for rolls of the dice.
+
+def get_user_input():
+    return int(input("Enter the number of rolls: "))
+
+#These are the typical dice options for D&D. This sets up a list for the user to choose which dice
+#option they want to roll.
+
+options = [20, 12, 10, 8, 6, 4]
+
+#This resets the variable max_range prior to the user choosing which dice to roll so that any prior
+#operations of this code won't cause conflicts with it running currently.
+
+max_range = None
+
+#This while loop makes it so that the user has to choose one of the dice options from the list so that
+#they won't choose to roll dice numbers that will lead to problems.
+#If they try entering a number outside the list it will cause a message to pop up and ask the
+#user to pick from an option available on the list.
+
+while max_range not in options:
+    max_range = int(input("Enter the dice number to roll out of 20, 12, 10, 8, 6, or 4: "))
+    if max_range not in options:
+        print('Not a valid dice size. Try again with 20, 12, 10, 8, 6, or 4.')
+
+#The varaible get_user_input from above when the user input a number for the rolls
+#The new num_rolls variable is made equal to the value of the get_user_input function.
+
+num_rolls = get_user_input()
+
+#A loop is started here that for each dice roll the user chose a random value between 1 and the
+#dice value they selected (the max_range or highest dice value) is printed to the console.
+
+for i in range(num_rolls):
+    print(random.randint(1, max_range))
+    #     print(max_range)
