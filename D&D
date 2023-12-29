@@ -141,3 +141,80 @@ creatures = ["Scorpion Size: Tiny Type: Beast Suggested HP: 5-15 Suggested Damag
              "Magma Phoenix Size: Huge Type: Elemental Suggested HP: 90-110 Suggested Damage: 24-34"]
 
 print(random.choice(creatures))
+
+#------------------------------------------------------------------------------------------------------------
+# Comment import random out if it is uncommented at the top.
+#This section will provide you with a randomly selected D&D location for your next adventure.
+#These ideas were pulled from chat GBT (open.ai). I recommend using chat GBT to generate your own quest ideas or,
+#changing one of these ideas to fit your own needs.
+
+location = ["The Forgotten Library of Eldrath: Unearth an ancient library hidden in the heart of the enchanted forest. \n Rumors suggest it holds forgotten spells and knowledge guarded by mystical creatures. ",
+            "Dragon's Rest Inn: Investigate a mysterious inn that appears only during a full moon. Inside, patrons \n speak of a portal to a realm filled with lost treasures guarded by spectral beings. ",
+            "Minotaur's Labyrinth of Treasures: Aid a minotaur seeking revenge on a wizard who victimized him. \n Navigate through a labyrinth filled with traps to uncover the treasures stolen from the minotaur.",
+            "City Sewers Infested: The city sewers are overrun with gigantic rats, and the guards need assistance \n in dealing with this infestation. Uncover the cause and prevent a larger threat.",
+            "Orcish Junk Traders: Incorporate humor by introducing orcs with a penchant for finding junk and \n attempting to sell it. Explore the dynamics of orcish trade in an unexpected way. ",
+            "The Babe's Encounter: Experience a random encounter with ogres led by The Babe. Navigate through \n the encounter and discover the ogres' motivations and hidden treasures.",
+            "Haunted Isle of Whispering Shadows: Sail to a desolate island haunted by mysterious whispers. \n Uncover the tragic tale behind the spirits and help them find peace.",
+            "Clockwork Citadel of Gears: Stumble upon a citadel where time is controlled by intricate clockwork \n mechanisms. Solve puzzles and navigate through shifting realities to unveil its secrets. ",
+            "Enchanted Garden of Illusions: Explore a garden where illusions play tricks on perception. Retrieve \n a rare flower guarded by magical creatures, but beware of illusions turning into reality.",
+            "Skyward Observatory of Starfall: Ascend to an ancient observatory in the clouds. Decode celestial \n messages to prevent an impending disaster foretold in the stars.",
+            "Ethereal Spire of Whispers: Ascend a mystical spire that pierces the ethereal plane. Uncover the \n secrets of otherworldly whispers that guide or mislead adventurers.",
+            "Cursed Mirror Maze: Enter a maze constructed with cursed mirrors reflecting distorted realities. \n Navigate through illusions and confront the malevolent force behind the curse. ",
+            "Sorcerer's Floating Market: Stumble upon a market floating in the skies, run by powerful sorcerers. \n Trade with magical beings and solve a market-related mystery. ",
+            "Giant's Garden of Enchanted Flora: Explore a garden tended by gentle giants, home to colossal and \n enchanted flora. Fulfill a task for the giants to gain access to rare botanical treasures.",
+            "Mystic Blacksmith's Forge: Seek out a reclusive blacksmith whose forge is powered by magical ley lines. \n Retrieve a unique weapon crafted with the essence of mystical energy. ",
+            "Time-Locked Crypt of Forgotten Heroes: Enter a crypt where time is frozen, preserving the memories of \n forgotten heroes. Solve temporal puzzles to unlock the stories and gain their ancient artifacts. ",
+            "Underground Bazaar of Shadows: Discover an underground bazaar thriving in shadows, where clandestine \n deals and mysterious artifacts are traded. Uncover the secrets hidden in the dark corners. ",
+            "Dreamweaver's Celestial Observatory: Ascend to a celestial observatory where dreams shape the destiny \n of mortals. Solve enigmatic riddles to unveil prophecies that guide or challenge the party.",
+            "Lost City of Elemental Mirrors: Venture into a city reflecting the elements, each district embodying \n a different elemental force. Balance the elements to prevent a cataclysmic event. ",
+            "Phoenix's Nesting Grounds: Explore a hidden valley where phoenixes nest, guarded by radiant flames. \n Retrieve a phoenix feather to forge a potent item or unravel the mystery of their presence. ",
+            "Whispering Caves of Lumina: Explore caverns where every whisper echoes and illuminates hidden passages. \n Uncover ancient runes that reveal the secrets of a forgotten civilization.",
+            "Mystical Bazaar of Evermyst: Stumble upon a bazaar that appears only at twilight, selling enchanted \n artifacts. Investigate the origin of these mystical goods and their impact on the realm.",
+            "Moonlit Mirror Lake: Reach a serene lake reflecting the moon's glow. Discover its magical properties, \n guarded by ancient water spirits. Fulfill their requests to harness the lake's power. ",
+            "Skyward Citadel of Elemental Storms: Ascend a floating citadel influenced by elemental storms. Navigate \n through chambers representing the forces of nature and prevent an impending cataclysm. ",
+            "Gnomish Clockwork Carnival: Attend a traveling carnival hosted by gnomish inventors. Encounter whimsical \n contraptions, and unveil a conspiracy threatening the stability of the carnival. ",
+            "Arcane Observatory of Astral Alignments: Visit a mystical observatory where celestial bodies align to \n unlock magical gateways. Decode ancient star maps to reveal hidden portals to other realms.",
+            "Luminous Labyrinth of Illusions: Enter a labyrinth where illusions shift reality. Solve perplexing puzzles \n and outwit illusions to reach the heart of the maze and claim its guarded treasure.",
+            "Lost Library of Elemental Tomes: Discover a library housing tomes imbued with elemental knowledge. Retrieve \n a specific volume containing ancient spells or information crucial for the party.",
+            "Spectral Shipwreck Cove: Sail to a cove haunted by the ghosts of a shipwrecked crew. Uncover the tragic tale \n and help the spirits find peace by locating their lost treasures.",
+            "Enchanted Grove of Shape-shifting Fae: Wander into a magical grove where mischievous shape-shifting fae dwell. \n Solve their riddles and challenges to earn their favor or face whimsical consequences. "]
+
+print(random.choice(location))
+#------------------------------------------------------------------------------------------------------------
+# Comment import random out if it is uncommented at the top.
+#This section is for generating random items in your quest.
+#These ideas were pulled from chat GBT (open.ai). I recommend using chat GBT to generate your own item ideas or,
+#changing one of these ideas to fit your own needs.
+
+item = ["Lost Travel Journal Description: A travel journal from a party that perished on an expedition.\n Reading it reveals clues to hidden treasures, dangerous creatures, and valuable knowledge of the surrounding lands",
+        "Helmed Figure's Medallion Description: A mysterious medallion worn by a helmed, hooded figure. \n It grants the wearer the ability to command an army of kobolds, goblins, orcs, and hobgoblins, forging an impressive force ",
+        "Pixie Dust Pouch Description: A pouch containing pixie dust, a magical substance. When sprinkled, \n it reveals invisible paths, unveils illusions, and grants temporary flight to the user.",
+        "Herbologist's Kit Description: A kit containing 11 rare herbs and spices. It's sought after by \n alchemists for concocting potions, poisons, or remedies, making it a valuable and versatile item ",
+        "Awakened Forest Talisman Description: A mystical talisman that awakens creatures in a haunted forest. \n The party needs it to navigate through the awakened creatures peacefully or control them for a specific purpose",
+        "Mage's Guild Artifact Description: A sought-after artifact that hampers the use of magic. \n Thieves are hired to steal it by a mages guild concerned about the misuse of magical powers ",
+        "Ogre's Sack of Surprises Description: A bag found after a random encounter with ogres. \n Besides treasure, it contains an unexpected item - a kidnapped child. The party must rescue the child and uncover the ogres' motives ",
+        "Moonstone Amulet Description: An amulet with a moonstone that protects against lycanthropy. \n Essential for a region plagued by werewolves, it can be used to ward off their attacks or negotiate with the werewolf community.",
+        "Crystal of Time Manipulation Description: A crystal capable of manipulating time. \n The party needs it to solve a temporal puzzle or prevent a catastrophic event, adding a unique twist to their quest.",
+        "Scepter of Elemental Control Description: A scepter with the power to control elemental forces. \n It becomes crucial in averting a natural disaster or harnessing elemental allies for a larger quest ",
+        "Crystalized Phoenix Feather Description: A rare feather from a phoenix, crystallized by its fiery essence. \n It can revive fallen comrades when used in a ritual, bringing them back to life with renewed vigor ",
+        "Lunar Compass Description: A magical compass guided by the phases of the moon. It reveals hidden paths only \n accessible during specific lunar phases, aiding the party in navigating treacherous terrains ",
+        "Shadowcloak Cloak Description: A cloak woven from the shadows, granting its wearer temporary invisibility. \n Essential for infiltrating enemy territory or avoiding deadly encounters ",
+        "Cursed Mirror of Truth Description: A mirror that reflects the innermost truths of those who gaze into it. \n The party must use it to uncover hidden motives or solve a mystery, but beware its potential emotional toll ",
+        "Glowing Orchid Bloom Description: An orchid that blooms with an otherworldly glow. Its petals can be \n crafted into a potion that grants night vision, making it a coveted item for nocturnal quests ",
+        "Stormcaller Conch Shell Description: A magical conch shell that, when blown, summons a powerful storm. \n It's sought after for both its destructive potential and its ability to clear obstacles or provide cover for the party",
+        "Feywild Prism Description: A prism infused with the energy of the Feywild. It can reveal hidden portals \n to this magical realm, opening up opportunities for unique encounters or quests in the Feywild",
+        "Soulbound Grimoire Description: A grimoire containing the trapped souls of powerful wizards. It grants the \n  user access to their knowledge and spells but demands a price in the form of a challenging quest or sacrifice ",
+        "Celestial Starstone Description: A gemstone imbued with celestial energy. It can be used to create a weapon \n that deals extra damage to fiends and undead, making it a valuable asset against dark forces ",
+        "Ethereal Locket of Echoes Description: A locket that captures and stores echoes of significant moments. It \n allows the party to revisit and gain insights from past events, aiding in solving puzzles or making informed decisions",
+        "Eclipsed Heart Amulet Description: An amulet with a gem that changes its color during a solar eclipse. It \n grants protection against dark magic and reveals hidden truths when worn during such celestial events.",
+        "Astral Map of the Lost Realm Description: A map that unfolds into a three-dimensional representation of a \n lost realm in the astral plane. The party must navigate this map to find the entrance to the realm and unravel its secrets.",
+        "Whispering Dagger of Betrayal Description: A dagger with a hilt that whispers the secrets of those nearby. \n It becomes crucial in uncovering hidden plots or traitors within the party.",
+        "Giant's Tear Gem Description: A massive gemstone said to be a tear shed by a benevolent giant. It has \n healing properties, but the party must decide whether to use it to heal a wounded ally or trade it for a substantial reward.",
+        "Mimic's Grimoire Description: A seemingly normal spellbook that transforms into a mimic when someone tries to \n read from it. The party must figure out how to extract valuable spells without becoming the mimic's prey.",
+        "Ethereal Lantern Description: A lantern that reveals hidden ethereal creatures. It's essential for navigating \n through regions where spirits and ghosts roam freely.",
+        "Oracle's Hourglass Description: An hourglass filled with mystical sand that allows the user to glimpse into \n the future. The party can use it to gain insights into upcoming challenges or make decisions with foresight.",
+        "Dragon's Scale Mail Description: Armor crafted from the scales of a defeated dragon. It provides resistance \n against the dragon's elemental breath and makes the wearer an intimidating presence among draconic creatures.",
+        "Cursed Ring of Reflection Description: A ring that reflects the true nature of those who gaze into it. It is \n both a curse and a boon, as it unveils hidden intentions but may also bring about unexpected consequences.",
+        "Lich's Phylactery Shard Description: A fragment of a lich's phylactery, containing a trace of its dark power. \n The party must destroy it to weaken the lich or use it strategically, risking the lure of necromantic forces."]
+
+print(random.choice(item))
