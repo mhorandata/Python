@@ -1,5 +1,35 @@
 #Dungeons and Dragons code randomizer
-#This code is to practice coding and to potentially help with playing the game dungeons and dragons.
+#
+#The code below is to practice coding and to potentially help with playing the game dungeons and dragons.
+#
+# Dungeons & Dragons (D&D) is a tabletop role-playing game that allows players to create their own characters and embark on adventures in a fantasy world.
+# The game is played with a set of rules that govern how the game is played and how characters interact with the world around them.
+# The Basic Rules for Dungeons & Dragons is a free PDF that covers the core of the tabletop game. It includes information on the various races, classes, backgrounds,
+# equipment, and other customization options that you can choose from. The Basic Rules document is divided into four parts. Part 1 is about creating a character,
+# providing the rules and guidance you need to make the character you’ll play in the game. Part 2 details the rules of how to play the game, beyond the basics described
+# in this introduction. That part covers the kinds of die rolls you make to determine success or failure at the tasks your character attempts, and describes the three broad
+# categories of activity in the game: exploration, interaction, and combat. Part 3 is all about magic. It covers the nature of magic in the worlds of D&D, the rules for spellcasting,
+# and a selection of typical spells available to magic-using characters (and monsters) in the game. Part 4 is about tools for Dungeon Masters. It includes information and stat blocks
+# for monsters, advice for building combat encounters, and magic items. You can find the Basic Rules from the official Dungeons & Dragons website.
+#
+#------------------------------------------------------------------------------------------------------------
+#Classes:
+#
+# There are 13 classes in Dungeons & Dragons (D&D) that a player can choose from 1234. Here is a list of the classes:
+#
+# Barbarian: A fierce warrior who can enter a battle rage.
+# Bard: An inspiring magician whose power echoes the music of creation.
+# Cleric: A priestly champion who wields divine magic in service of a higher power.
+# Druid: A priest of the Old Faith, wielding the powers of nature and adopting animal forms.
+# Fighter: A master of martial combat, skilled with a variety of weapons and armor.
+# Monk: A master of martial arts, harnessing the power of the body in pursuit of physical and spiritual perfection.
+# Paladin: A holy warrior bound to a sacred oath.
+# Ranger: A warrior who combats threats on the edges of civilization.
+# Rogue: A scoundrel who uses stealth and trickery to overcome obstacles and enemies.
+# Sorcerer: A spellcaster who draws on inherent magic from a gift or bloodline.
+# Warlock: A wielder of magic that is derived from a bargain with an extraplanar entity.
+# Wizard: A scholarly magic-user capable of manipulating the structures of reality.
+# Artificer: Masters of invention, artificers use ingenuity and magic to unlock extraordinary capabilities in objects.
 #------------------------------------------------------------------------------------------------------------
 # import random allows you to use randomized data.
 # random.randint below is used for randomizing integers.
@@ -30,6 +60,7 @@ import random
 
 # print(mylist)
 #------------------------------------------------------------------------------------------------------------
+#This section of code allows you to roll multiple various kinds of common D&D dice you choose.
 # Comment import random out if it is uncommented at the top.
 
 import random
@@ -70,3 +101,43 @@ num_rolls = get_user_input()
 for i in range(num_rolls):
     print(random.randint(1, max_range))
     #     print(max_range)
+
+#------------------------------------------------------------------------------------------------------------
+# Comment import random out if it is uncommented at the top.
+#This section helps randomize monster encounters for your players
+# Go to website: https://www.dndbeyond.com/homebrew/monsters for more details on each mosnster or to create your
+#own monster.
+# import random
+
+creatures = ["Scorpion Size: Tiny Type: Beast Suggested HP: 5-15 Suggested Damage: 1-4",
+             "Shrieker Size: Medium Type: Plant Suggested HP: 20-30 Suggested Damage: 5-10",
+             "Spider Type: Beast Suggested HP: 8-20 Suggested Damage: 2-6",
+             "Vulture Size: Medium Type: Beast Suggested HP: 15-25 Suggested Damage: 4-8",
+             "Amble Size: Medium Type: Unknown Suggested HP: 25-35 Suggested Damage: 6-12",
+             "Giant Rat Size: Small Type: Beast Suggested HP: 7-15 Suggested Damage: 2-6",
+             "Myconid Adult Size: Medium Type: Plant Suggested HP: 30-40 Suggested Damage: 8-12",
+             "Giant Centipede Size: Small Type: Beast Suggested HP: 10-18 Suggested Damage: 3-7",
+             "Giant Eagle Size: Large Type: Beast Suggested HP: 30-50 Suggested Damage: 10-20",
+             "Chimera Size: Large Type: Mixed Suggested HP: 80-100 Suggested Damage: 20-30",
+             "Quasit Size: Tiny Type: Fiend Suggested HP: 5-10 Suggested Damage: 1-4",
+             "Gorgon Size: Large Type: Construct Suggested HP: 60-80 Suggested Damage: 15-25",
+             "Pseudodragon Size: Tiny Type: Dragon Suggested HP: 15-25 Suggested Damage: 4-8",
+             "Banshee Size: Medium Type: Undead Suggested HP: 40-60 Suggested Damage: 12-18",
+             "Water Elemental Size: Large Type: Elemental Suggested HP: 50-70 Suggested Damage: 14-24",
+             "Succubus Size: Medium Type: Fiend Suggested HP: 40-60 Suggested Damage: 10-15",
+             "Iron Golem Size: Large Type: Construct Suggested HP: 80-100 Suggested Damage: 18-28",
+             "Young Black Dragon Size: Large Type: Dragon Suggested HP: 70-90 Suggested Damage: 16-26",
+             "Ghost Size: Medium Type: Undead Suggested HP: 50-70 Suggested Damage: 14-20",
+             "Fire Elemental Size: Large Type: Elemental Suggested HP: 60-80 Suggested Damage: 12-20",
+             "Eldritch Serpent Size: Large Type: Aberration Suggested HP: 55-75 Suggested Damage: 14-18",
+             "Clockwork Enforcer Size: Medium Type: Construct Suggested HP: 45-60 Suggested Damage: 10-14",
+             "Celestial Sprite Size: Tiny Type: Celestial Suggested HP: 20-30 Suggested Damage: 5-8",
+             "Wraithhound Size: Large Type: Undead Suggested HP: 70-85 Suggested Damage: 16-22",
+             "Ember Phoenix Size: Large Type: Elemental Suggested HP: 80-100 Suggested Damage: 20-30",
+             "Void Stalker Size: Medium Type: Aberration Suggested HP: 50-70 Suggested Damage: 12-16",
+             "Gear Gazer Size: Small Type: Construct Suggested HP: 30-45 Suggested Damage: 8-12",
+             "Luminous Sprite Size: Diminutive Type: Celestial Suggested HP: 15-25 Suggested Damage: 3-5",
+             "Necrohound Size: Medium Type: Undead Suggested HP: 60-75 Suggested Damage: 14-18",
+             "Magma Phoenix Size: Huge Type: Elemental Suggested HP: 90-110 Suggested Damage: 24-34"]
+
+print(random.choice(creatures))
