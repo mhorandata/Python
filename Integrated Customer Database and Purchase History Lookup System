@@ -1,0 +1,52 @@
+#This impressive Python project seamlessly combines a comprehensive customer database with a sophisticated purchase history lookup system. 
+#The system is designed to enhance user experience and streamline data retrieval for businesses dealing with customer interactions and product purchases.
+
+
+#Key Features:
+
+#Dynamic Customer Database: The project incorporates a dynamic customer database containing first names, last names, membership status, email addresses, and contact numbers.
+
+#Interactive User Interface: Utilizing an interactive interface, the program prompts users to input a first name and, if applicable, a corresponding last name for further information retrieval.
+
+#Efficient Information Retrieval: The system efficiently retrieves and displays relevant customer information, including membership status, email, contact number, last purchase, and the associated item's value.
+
+#Membership Differentiation: The program distinguishes between non-pro members and pro members, providing valuable insights into the customer base's segmentation.
+
+#Error Handling: Robust error handling ensures a smooth user experience by notifying users when no matching records are found for the entered names.
+
+#Implications:
+#This project showcases your proficiency in creating a versatile and user-friendly Python application that can significantly benefit businesses in managing customer interactions and analyzing purchase histories. 
+#The integration of dynamic data and effective user prompts demonstrates your ability to develop practical solutions that contribute to operational efficiency.
+
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+table = [
+    ["Emma", "Liam", "Olivia", "Noah", "Sophia", "Jackson", "Ava", "Lucas", "Isabella", "Oliver", "Mia", "Aiden", "Harper", "Elijah", "Amelia", "Grayson", "Abigail", "Ethan", "Scarlett", "Mason"],
+    ["Smith", "Johnson", "Williams", "Jones", "Brown", "Davis", "Miller", "Wilson", "Moore", "Taylor", "Anderson", "Thomas", "Jackson", "White", "Harris", "Martin", "Thompson", "Garcia", "Martinez", "Robinson"],
+    ["Non-pro-member", "Pro-member", "Non-pro-member", "Pro-member", "Non-pro-member", "Pro-member", "Pro-member", "Non-pro-member", "Pro-member", "Non-pro-member", "Pro-member", "Non-pro-member", "Pro-member", "Non-pro-member", "Pro-member", "Non-pro-member", "Pro-member", "Non-pro-member", "Non-pro-member", "Pro-member"],
+    ["emma@example.com", "liam@example.com", "olivia@example.com", "noah@example.com", "sophia@example.com", "jackson@example.com", "ava@example.com", "lucas@example.com", "isabella@example.com", "oliver@example.com", "mia@example.com", "aiden@example.com", "harper@example.com", "elijah@example.com", "amelia@example.com", "grayson@example.com", "abigail@example.com", "ethan@example.com", "scarlett@example.com", "mason@example.com"],
+    ["555-1234", "555-5678", "555-9012", "555-3456", "555-7890", "555-2345", "555-6789", "555-0123", "555-4567", "555-8901", "555-1234", "555-5678", "555-9012", "555-3456", "555-7890", "555-2345", "555-6789", "555-0123", "555-4567", "555-8901"],
+    ["Assassin's Creed: Valhalla", "FIFA 22", "The Legend of Zelda: Breath of the Wild", "Call of Duty: Warzone", "Minecraft", "Cyberpunk 2077", "Animal Crossing: New Horizons", "Grand Theft Auto V", "Fortnite", "Overwatch", "Red Dead Redemption 2", "Super Mario Odyssey", "Doom Eternal", "God of War", "World of Warcraft: Shadowlands", "NBA 2K22", "Madden NFL 22", "Final Fantasy XIV", "Rainbow Six Siege", "Among Us"],
+    [59.99, 49.99, 59.99, 0, 26.95, 49.99, 54.99, 29.99, 0, 39.99, 59.99, 39.99, 59.99, 49.99, 59.99, 59.99, 59.99, 49.99, 29.99, 19.99]
+
+
+
+
+]
+
+selection = input("Please enter a first name: ")
+
+# Check if the entered name is in the list
+if selection in table[0]:
+    # If the name is a first name, find its index and prompt for the last name
+    first_name_index = table[0].index(selection)
+    last_name = input("Please enter the last name: ")
+
+    # Check if the entered last name is in the list
+    if last_name in table[1]:
+        last_name_index = table[1].index(last_name)
+        result = [table[2][first_name_index], table[3][first_name_index], table[4][first_name_index], table[5][first_name_index], table[6][first_name_index]]
+        print(f"Customer's info, last purchase, and item's value: {selection} {last_name} {result}")
+    else:
+        print(f"No match found for {last_name} in the system.")
+else:
+    print(f"No match found for {selection} in the system.")
