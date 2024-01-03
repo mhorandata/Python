@@ -1,0 +1,21 @@
+#This file is focused on important/useful Python code  
+#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#This Python code defines a dictionary named students with keys "male" and "female," each associated with a list of names. The code then iterates over the keys of the dictionary ("male" and "female") using a nested loop. 
+#Inside the nested loop, it further iterates over the names in the corresponding list.
+# 
+# The conditional statement (if "a" in name) checks if the letter 'a' is present in each name. If a name contains the letter 'a,' it prints that name using the print statement.
+# 
+# In summary, the code loops through the dictionary of students, checks each name for the presence of the letter 'a,' and prints the names that meet this criterion.
+
+#Here the dictionary named students is created.
+students = {
+    "male":["Tom", "Charlie", "Harry"],
+    "female":["Sarah", "Huda", "Samantha"]
+}
+for key in students.keys():
+    for name in students[key]:
+        #the below code only prints out the names that have the letter a in the their name.
+        if "a" in name:
+            print(name)
+
+#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
