@@ -178,3 +178,15 @@ else:
 # If the user's input for the operation is not one of the specified choices, it prints an error message.
 #
 # This code essentially acts as a basic calculator, taking user input for the operation and two numbers, performing the chosen operation, and displaying the result.
+#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+def multiply(a, b):
+    # Multiply the two numbers
+    result = a * b
+    # Return the result
+    return result
+
+# Test the function with the provided values
+answer = multiply(5, 10)
+print(answer)
+# This code defines a function called multiply that takes two parameters (a and b) and returns their product. 
+# The function is then called with the values 5 and 10, and the result is printed. If you run this code, it should output 50, which is the product of 5 and 10.
