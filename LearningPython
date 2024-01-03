@@ -19,3 +19,28 @@ for key in students.keys():
             print(name)
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# In Python, list comprehension is a concise way to create lists. 
+# It allows you to define a list and specify the conditions for including elements in that list in a single line of code. 
+# The general syntax is [expression for item in iterable if condition].
+# 
+# Now, let's break down the provided code:
+
+
+even = [x for x in range(1, 101) if x % 2 == 0]
+print(even)
+
+# even is the name of the list that will be created using list comprehension.
+# 
+# [x for x in range(1, 101) if x % 2 == 0]: This is the list comprehension expression. Let's break it down further:
+# 
+# for x in range(1, 101): It iterates over each value of x in the range from 1 to 100 (inclusive).
+# 
+# if x % 2 == 0: It checks whether the current value of x is even (divisible by 2).
+# 
+# x: The expression to be included in the list if the conditions are met. In this case, it's the variable x.
+# 
+# Putting it all together, this list comprehension creates a list (even) containing all even numbers from 1 to 100.
+# 
+# print(even): Finally, the print statement displays the resulting list of even numbers.
+#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
