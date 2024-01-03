@@ -114,3 +114,67 @@ for word in words:
 
 output = " ".join(new_words)
 print(output)
+#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+choice = input("Choose either add, subtract, multiply, or divide: ")
+num1 = float(input("Enter your first number: "))
+num2 = float(input("Enter your second number: "))
+
+if choice == "add":
+    result = num1 + num2
+    print(f"The sum of {num1} and {num2} is: {result}")
+elif choice == "subtract":
+    result = num1 - num2
+    print(f"The difference of {num1} and {num2} is: {result}")
+elif choice == "multiply":
+    result = num1 * num2
+    print(f"The product of {num1} and {num2} is: {result}")
+elif choice == "divide":
+    if num2 != 0:
+        result = num1 / num2
+        print(f"The division of {num1} by {num2} is: {result}")
+    else:
+        print("Error: Cannot divide by zero.")
+else:
+    print("Invalid input. Choose either add, subtract, multiply, or divide.")
+
+
+# Break down the code line by line:
+# choice = input("Choose either add, subtract, multiply, or divide: ")
+# Prompts the user to enter their choice of operation (add, subtract, multiply, or divide).
+# The user's input is stored in the variable choice.
+#
+# User Input for First Number:
+# num1 = float(input("Enter your first number: "))
+# Prompts the user to enter the first number.
+# Converts the user's input to a floating-point number using float() and stores it in the variable num1.
+#
+# User Input for Second Number:
+# num2 = float(input("Enter your second number: "))
+# Prompts the user to enter the second number.
+# Converts the user's input to a floating-point number using float() and stores it in the variable num2.
+#
+# Conditional Statements:
+# if choice == "add":
+#     result = num1 + num2
+#     print(f"The sum of {num1} and {num2} is: {result}")
+# elif choice == "subtract":
+#     result = num1 - num2
+#     print(f"The difference of {num1} and {num2} is: {result}")
+# elif choice == "multiply":
+#     result = num1 * num2
+#     print(f"The product of {num1} and {num2} is: {result}")
+# elif choice == "divide":
+#     if num2 != 0:
+#         result = num1 / num2
+#         print(f"The division of {num1} by {num2} is: {result}")
+#     else:
+#         print("Error: Cannot divide by zero.")
+# else:
+#     print("Invalid input. Choose either add, subtract, multiply, or divide.")
+# Checks the value of choice to determine which operation to perform.
+# Calculates the result based on the chosen operation.
+# Prints the result along with a descriptive message.
+# Handles division by zero error by checking if num2 is not equal to 0.
+# If the user's input for the operation is not one of the specified choices, it prints an error message.
+#
+# This code essentially acts as a basic calculator, taking user input for the operation and two numbers, performing the chosen operation, and displaying the result.
