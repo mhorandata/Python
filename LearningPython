@@ -43,4 +43,28 @@ print(even)
 # 
 # print(even): Finally, the print statement displays the resulting list of even numbers.
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+words = ["the", "quick,", "brown", "fox", "jumps", "over", "the", "lazy", "dog"]
+answer = [[w.upper(), w.lower(), len(w)] for w in words]
+print(answer)
 
+# words: This is a list containing strings.
+# 
+# [[w.upper(), w.lower(), len(w)] for w in words]: This is a list comprehension expression. Breaking it down:
+# 
+# for w in words: It iterates over each word (w) in the list of words.
+# 
+# [w.upper(), w.lower(), len(w)]: This is the expression to be included in the new list. It creates a nested list for each word, where:
+# 
+# w.upper(): It converts the word to uppercase.
+# 
+# w.lower(): It converts the word to lowercase.
+# 
+# len(w): It calculates the length of the word.
+# 
+# Putting it all together, this list comprehension creates a list of lists (answer), where each inner list contains the uppercase version,
+# lowercase version, and length of each word in the original list.
+# 
+# print(answer): This statement prints the resulting list of lists.
+# 
+# So, when you run this code, it will output a list of lists, where each inner list contains the uppercase version, 
+# lowercase version, and length of each word in the original list.
