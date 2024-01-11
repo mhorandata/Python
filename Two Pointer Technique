@@ -23,8 +23,13 @@ def search_item(item_list, target):
 #With clipboard1 starting at the beginning this increases efficiency by checking both ends until
 #you meet in the middle making it more likely to find the results without overlapping the search.
     clipboard2 = len(item_list) - 1
+# The reason clipboard2 is meant to be bigger in the while code below is that when it started at the end 
+#(-1) the number position defaults to the highest (the back of the list) at first going down each time 
+#(for example, if there are 5 items in the array clipboard2 would be = 4 at first and clipboard1 would be equal to 0 at first.
     while clipboard1 < clipboard2:
         current_sum = item_list[clipboard1] + item_list[clipboard2]
+
+#The below if statement first checks to see if 
 
         if current_sum == target:
             return True  # Item found
