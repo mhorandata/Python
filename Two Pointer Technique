@@ -19,8 +19,10 @@
 
 def search_item(item_list, target):
     clipboard1 = 0
+#The -1 in the cliboard2 below is starting at the end. 
+#With clipboard1 starting at the beginning this increases efficiency by checking both ends until
+#you meet in the middle making it more likely to find the results without overlapping the search.
     clipboard2 = len(item_list) - 1
-
     while clipboard1 < clipboard2:
         current_sum = item_list[clipboard1] + item_list[clipboard2]
 
