@@ -1,0 +1,39 @@
+# The two-pointer approach is a simple and effective technique, especially useful for problems involving arrays.
+# Let's break it down line-by-line for better understanding:
+#
+# Initialization:
+#
+# Create two pointers, typically named left and right.
+# Initialize them to the start and end of the array, respectively.
+# Iteration:
+#
+# While left is less than or equal to right, continue the process.
+# Comparison:
+#
+# Compare the elements at positions arr[left] and arr[right].
+# Move Pointers:
+#
+# Depending on the problem:
+# If arr[left] and arr[right] meet the desired condition, you might perform a specific action.
+# If the condition is met, move left and/or right pointers accordingly.
+# Repeat:
+#
+# Repeat steps 3-4 until the pointers meet or cross each other.
+# Termination:
+#
+# Once the pointers meet or cross, the process is complete.
+# Example:
+# Let's say you want to find a pair in a sorted array with a specific sum:
+
+left, right = 0, len(arr) - 1
+while left <= right:
+    current_sum = arr[left] + arr[right]
+    if current_sum == target_sum:
+        # Found the pair
+        return [arr[left], arr[right]]
+    elif current_sum < target_sum:
+        # Move left pointer to increase the sum
+        left += 1
+    else:
+        # Move right pointer to decrease the sum
+        right -= 1
