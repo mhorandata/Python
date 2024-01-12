@@ -17,33 +17,72 @@
 # By using two clipboards, you can quickly narrow down the search range, much like the two-pointer technique.
 #------------------------------------------------------------------------------------------------------------------------------
 
-# Now, let's translate this into code:
 
+import random
+
+
+def generate_random_list(user_input):
+    # Calculate the multiplication factor (1-4)
+    multiplication_factor = random.randint(1, 4)
+
+    # Calculate the maximum size of the random list based on user input and multiplication factor
+    max_size = user_input * multiplication_factor
+
+    # Generate a sorted random list of unique numbers smaller than user input and 1-4 times bigger
+    random_list = sorted(random.sample(range(1, max_size + 1), k=max_size))
+
+    return random_list, multiplication_factor
+
+
+def input_and_search():
+    # Get user input for the search item
+    user_input = int(input("Enter the search item: "))
+
+    # Generate a random list based on user input
+    random_list, multiplication_factor = generate_random_list(user_input)
+
+    # Call the search_item function with the generated list and user input as the target
+    result, iterations = search_item(random_list, user_input)
+
+    # Display the result, the number of iterations, and the multiplication factor
+    print(f"Result: {result}")
+    print(f"Iterations: {iterations}")
+    print(f"Multiplication Factor: {multiplication_factor}")
+
+
+# Your existing search_item function
 def search_item(item_list, target):
     clipboard1 = 0
-#The -1 in the cliboard2 below is starting at the end. 
-#With clipboard1 starting at the beginning this increases efficiency by checking both ends until
-#you meet in the middle making it more likely to find the results without overlapping the search.
+    # The -1 in the cliboard2 below is starting at the end.
+    # With clipboard1 starting at the beginning this increases efficiency by checking both ends until
+    # you meet in the middle making it more likely to find the results without overlapping the search.
     clipboard2 = len(item_list) - 1
-# The reason clipboard2 is meant to be bigger in the while code below is that when it started at the end 
-#(-1) the number position defaults to the highest (the back of the list) at first going down each time 
-#(for example, if there are 5 items in the array clipboard2 would be = 4 at first and clipboard1 would be equal to 0 at first.
+    iterations = 0
+
+    # The reason clipboard2 is meant to be bigger in the while code below is that when it started at the end
+    # (-1) the number position defaults to the highest (the back of the list) at first going down each time
+    # (for example, if there are 5 items in the array clipboard2 would be = 4 at first and clipboard1
+    # would be equal to 0 at first.
     while clipboard1 < clipboard2:
         current_sum = item_list[clipboard1] + item_list[clipboard2]
-
-#The below if statement first checks to see if 
+        iterations += 1
 
         if current_sum == target:
-            return True  # Item found
+            return True, iterations  # Item found
         elif current_sum < target:
             clipboard1 += 1
         else:
             clipboard2 -= 1
 
-    return False  # Item not found
-# In this example, item_list represents the list of items in the warehouse,
-# and target is the desired item. The search_item function efficiently searches for the item using the two-clipboard approach.
+    return False, iterations  # Item not found
 
+
+# Call the input_and_search function to start the process
+input_and_search()
+
+# In this example, item_list represents the list of items in the warehouse,
+# and target is the desired item. The search_item function efficiently searches 
+# for the item using the two-clipboard approach.
 #------------------------------------------------------------------------------------------------------------------------------
 # Let's break down the provided code line by line:
 #
