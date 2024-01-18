@@ -1,0 +1,33 @@
+#Here is an example of how a class works using the analogy of a cookie cutter and cookies.
+#The class is the cookie cutter and by building it's structure the cookies can use that
+#to get the basic shape and reuse it with variations.
+#The Class className: def __init__(self, parameterName): is the basic setup to the start of a class.
+#the self.parameterName = parameterName sets up the parameter to be references with the class.
+#self is used to reference the current class. It is customary to use self as the first parameter.
+#self enables you to modify an object's properties and execute tasks unique to that particular instance.
+class Cookie:
+    def __init__(self, cookieColor):
+        self.cookieColor = cookieColor
+
+#In Python a methond is like a funciton but it is part of another object (like a class).
+#There are two methods (functions) within this class (get_color and set_color).
+#Notice the keyword self is used to indicate you are referencing a class.
+#The return keyword is used to pass information (save it for later) from a funciton (or method)
+#to a variable or parameter so that the variable or parameter will have that value
+#later when needed (to print the value to the user for instance).
+    def get_color(self):
+        return self.cookieColor
+
+    def set_color(self, cookieColor):
+        self.cookieColor = cookieColor
+
+#Here is where the cookie cutter cuts individual cookies in our analogy.
+#The cookie cutter class Cookie is used to "Cut" (create) individual instances ("cookeis")
+#and these cookies are then given a string value of green and blue.
+cookie_one = Cookie('green')
+cookie_two = Cookie('blue')
+
+
+#Finally here is where the cookies are shown to the user (they are printed).
+print('Cookie one is ', cookie_one.get_color())
+print('Cookie two is ', cookie_two.get_color())
