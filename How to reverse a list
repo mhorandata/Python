@@ -1,0 +1,52 @@
+def reverse(self):
+    temp = self.head
+    self.head = self.tail
+    self.tail = temp
+    after = temp.next
+    before = None
+
+    for _ in range(self.length):  # Fix the typo in 'self.length'
+        after = temp.next
+        temp.next = before
+        before = temp
+        temp = after
+
+# 
+# Let's break down the code line by line for a beginner:
+# 
+# def reverse(self):
+# 
+# Defines a function named reverse that takes an instance of a class (self) as its first parameter.
+# temp = self.head
+# 
+# Creates a temporary variable temp and assigns it the value of the current head of a linked list (self.head).
+# self.head = self.tail
+# 
+# Sets the head of the linked list to be the current tail, effectively swapping the head and tail.
+# self.tail = temp
+# 
+# Sets the tail of the linked list to be the temporary variable (temp), completing the swap.
+# after = temp.next
+# 
+# Creates a variable after and assigns it the value of the next node after the current temporary node (temp).
+# before = None
+# 
+# Initializes a variable before and assigns it None. This will be used to reverse the links in the linked list.
+# for _ in range(self.length):
+# 
+# Starts a loop that iterates self.length times. This loop is used to reverse the links in the linked list.
+# after = temp.next
+# 
+# Updates the after variable to store the next node after the current temporary node (temp).
+# temp.next = before
+# 
+# Reverses the link of the current temporary node (temp) by pointing its next to the before node.
+# before = temp
+# 
+# Updates the before variable to be the current temporary node (temp) for the next iteration.
+# temp = after
+# 
+# Updates the temporary node (temp) to be the next node (after) for the next iteration.
+#
+# This code essentially reverses the direction of the links in a linked list, 
+# effectively reversing the order of the elements in the list.
