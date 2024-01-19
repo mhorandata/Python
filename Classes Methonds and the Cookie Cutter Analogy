@@ -1,7 +1,7 @@
 #Here is an example of how a class works using the analogy of a cookie cutter and cookies.
 #The class is the cookie cutter and by building it's structure the cookies can use that
 #to get the basic shape and reuse it with variations.
-#The Class className: def __init__(self, parameterName): is the basic setup to the start of a class.
+#The Class ClassName: def __init__(self, parameterName): is the basic setup to the start of a class.
 #the self.parameterName = parameterName sets up the parameter to be references with the class.
 #self is used to reference the current class. It is customary to use self as the first parameter.
 #self enables you to modify an object's properties and execute tasks unique to that particular instance.
