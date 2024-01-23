@@ -31,3 +31,26 @@ cookie_two = Cookie('blue')
 #Finally here is where the cookies are shown to the user (they are printed).
 print('Cookie one is ', cookie_one.get_color())
 print('Cookie two is ', cookie_two.get_color())
+#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#The example below uses Harry Potter houses and allows the users to input their own values.
+class House:
+    def __init__(self, houseChoice):
+        self.houseChoice = houseChoice
+
+    def get_house(self):
+        return self.houseChoice
+
+    def set_house(self, houseChoice):
+        self.houseChoice = houseChoice
+
+# Getting user input for student_one
+student_one_choice = input("Enter the house choice for Student one (Godric Gryffindor, Salazar Slytherin, Rowena Ravenclaw and Helga Hufflepuff): ")
+student_one = House(student_one_choice)
+
+# Getting user input for student_two
+student_two_choice = input("Enter the house choice for Student two (Godric Gryffindor, Salazar Slytherin, Rowena Ravenclaw and Helga Hufflepuff): ")
+student_two = House(student_two_choice)
+
+# Printing house choices
+print('Student one is in house ', student_one.get_house())
+print('Student two is in house ', student_two.get_house())
