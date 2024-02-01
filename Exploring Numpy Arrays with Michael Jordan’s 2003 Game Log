@@ -1,0 +1,147 @@
+
+# Import the random and numpy modules
+import random
+import numpy as np
+
+# Generate three random numbers between 0 and 1 and assign them to variables
+item1 = random.random()
+item2 = random.random()
+item3 = random.random()
+
+# Create a 2D numpy array with two rows and three columns and assign it to a variable
+test_list = np.array([[6.2, 8.4, 7.3], [1.1, 5.6, 9.4]])
+
+# Print the shape of the array, which is a tuple of (rows, columns)
+print(test_list.shape) 
+
+# Create a 1D numpy array with three elements and assign it to a variable
+new_row = np.array([item1, item2, item3])
+
+# Append the new row to the test_list array along the axis 0, which means adding a new row
+test_list = np.append(test_list, [new_row], axis=0)
+
+# Print the updated test_list array
+print(test_list) 
+
+# Print the shape of the updated array, which is now (3, 3)
+print(test_list.shape) 
+
+# Print the first row of the array using slicing notation
+print(test_list[0, ::])
+
+# Print the second row of the array using slicing notation
+print(test_list[1, ::]) 
+
+# Print the third row of the array using slicing notation
+print(test_list[2, ::]) 
+
+# Change the value of the first element of the first row to 1
+test_list[0, 0] = 1
+
+# Print the updated test_list array
+print(test_list) 
+
+# The next line is commented out because it causes an error
+# The reason is that np.delete returns a new array with the specified element removed, but does not change the 
+# shape of the original array
+# Therefore, assigning the result of np.delete to test_list[0] would make the first row have only two elements, 
+# while the other rows have three
+# This would make the test_list array inconsistent and invalid
+# test_list[0] = np.delete(test_list[0], 0) # this line causes the error
+
+# The next line fixes the error by resizing the array after deleting the first element of the first row
+# The np.resize function returns a new array with the specified shape, 
+# and fills the extra elements with repeated copies of the original array
+# Therefore, assigning the result of np.resize to test_list[0] would make the first row have three elements again, 
+# by copying the second element
+test_list[0] = np.resize(test_list[0, 1:], (3,)) # this line fixes the error by resizing the array
+
+# The next line is also commented out because it is another way to fix the error by inserting a new element to the 
+# first row
+# The np.insert function returns a new array with the specified element inserted at the given index
+# Therefore, assigning the result of np.insert to test_list[0] would make the first row have three elements again, 
+# by adding a new element at the beginning
+# test_list[0] = np.insert(test_list[0, 1:], 0, 6.2) # this line also fixes the error by inserting a new element
+
+# Print the updated test_list array
+print(test_list) 
+
+# Change the value of the first element of the first row back to 6.2
+test_list[0, 0] = 6.2
+
+# Print the updated test_list array
+print(test_list) 
+
+# Add 2 to every element of the test_list array using broadcasting
+test_list += 2
+
+# Print the updated test_list array
+print(test_list) 
+
+# Subtract 2 from every element of the test_list array using broadcasting
+test_list -= 2
+
+# Print the updated test_list array
+print(test_list) 
+
+# Calculate the sum of all the elements of the test_list array and assign it to a variable
+sum_var = np.sum(test_list)
+
+# Print the sum_var variable
+print(sum_var) 
+
+# Resize the test_list array to have two rows and four columns and assign it to a variable
+# The np.resize function will fill the extra elements with repeated copies of the original array
+resize_test = np.resize(test_list, (2, 4))
+
+# Print the resize_test array
+print(resize_test) 
+
+# Resize the test_list array to have three rows and three columns and assign it to a variable
+# The np.resize function will truncate the extra elements of the original array
+resize_test = np.resize(test_list, (3,3))
+
+# Print the resize_test array
+print(resize_test) 
+
+# Create a 1D numpy array with 300 elements from 1 to 300 and assign it to a variable
+long_list1 = np.arange(1, 301)
+
+# Reshape the long_list1 array to have three rows and 100 columns and assign it to a variable
+# The np.reshape function will change the shape of the array without changing the data
+matrix_array = long_list1.reshape(3, 100)
+
+# Print the matrix_array array
+print(matrix_array) 
+
+# The next part of the code is about Michael Jordan's monthly points in 2003
+
+# Create a list of lists containing the points scored by Michael Jordan in each month of 2003
+april = [15, 21, 17, 25, 21, 26, 25, 22, 17]
+march = [19, 23, 26, 25, 24, 14, 23, 19, 15, 23, 39, 27, 10, 4, 21, 17]
+february = [35, 25, 30, 43, 20, 11, 23, 12, 27, 45]
+january = [24, 8, 19, 17, 11, 18, 25, 25, 32, 22, 23, 14, 14, 19, 41, 10]
+december = [17, 21, 10, 17, 13, 16, 33, 30, 2, 12, 14, 20, 16, 21, 25]
+november = [16, 14, 28, 20, 8, 19, 8, 19, 27, 12, 25, 6, 10, 21]
+october = [21, 8, 0, 0, 0, 0, 0]
+
+# Create a list of numpy arrays from the lists using list comprehension
+total_2003 = [np.array(month) for month in [april, march, february, january, december, november, october]]
+
+# Concatenate all the numpy arrays into one using np.concatenate
+total_2003 = np.concatenate(total_2003)
+
+# Calculate the mean of each month's points using list comprehension and np.mean
+monthly_average = [np.mean(month) for month in total_2003]
+
+# Print the monthly averages in a formatted way
+print('Michael Jordan 2023 Monthly Average Score April, March February, January, December, November, October: ')
+print(monthly_average) # Output: [21.0, 20.4375, 28.3, 19.375, 17.466666666666665, 16.571428571428573, 4.142857142857143]
+
+# Calculate the mean of the total points using np.mean
+average = np.mean(total_2003)
+
+# Print the total average in a formatted way
+print('Michael Jordan 2023 Average Score: ')
+print(average)
+
