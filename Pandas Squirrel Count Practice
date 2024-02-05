@@ -1,0 +1,33 @@
+#This project used the following website to Export the squirrel data: https://data.cityofnewyork.us/Environment/2018-Central-Park-Squirrel-Census-Squirrel-Data/vfnx-vebw/about_data
+import pandas
+
+#The .read_csv will allow Python to read csv files.
+#the r in front means Raw String is used to make the backslashes not act as escape characters.
+data = pandas.read_csv(r"C:\Users\mhora\Downloads\2018_Central_Park_Squirrel_Census_-_Squirrel_Data_20240205.csv")
+#The len below counts the number of rows where the colum Primary Fur Color matches the color specified below.
+grey_squirrels_count = len(data[data["Primary Fur Color"] == "Gray"])
+red_squirrels_count =  len(data[data["Primary Fur Color"] == "Cinnamon"])
+black_squirrels_count = len(data[data["Primary Fur Color"] == "Black"])
+print(grey_squirrels_count)
+print(red_squirrels_count)
+print(black_squirrels_count)
+
+#This dictonary has the list of fur colors lined up with the count for each color making it easier to
+#see how much of each type there is.
+data_dict = {
+    "Fur Color": ["Gray", "Cinnamon", "Black"],
+    "Count": [grey_squirrels_count, red_squirrels_count, black_squirrels_count]
+}
+
+print(data_dict)
+
+#df is typically used as a variable for data frames
+df = pandas.DataFrame(data_dict)
+#to_csv will convert the data frame into a csv file type.
+#The .csv file will be placed in the same folder as the project and you can open it in Pycharm to see
+#the .csv file results:
+# Fur Color,Count
+# 0,Gray,2473
+# 1,Cinnamon,392
+# 2,Black,103
+df.to_csv("squirrel_count.csv")
