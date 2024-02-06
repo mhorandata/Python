@@ -1,0 +1,53 @@
+#os is automatically installed in pycharm
+#You will need to install psutil for this code to run.
+#To do so run:
+#pip install psutil
+#To update the .exe file type:
+#pyinstaller main.py --onefile
+#The file will appear in the dist folder in the same file path directory as the project.
+#Updating the .exe file might create a new file and you may need to remove the old one.
+
+import os
+import psutil
+
+# define the list of program names below. They need to be in quotation marks seperated by a coma.
+program_list = ["steamwebhelper.exe", "steam"]
+
+# loop through the list
+for program in program_list:
+    # print the name of the program
+    print(f"Checking {program}...")
+
+    # The line of code below:
+    # pids = [p.info["pid"] for p in psutil.process_iter(attrs=["pid", "name"]) if program in p.info["name"]]
+    # is using a feature of Python called list comprehension.
+    # List comprehension is a way of creating a new list based on an existing list or another iterable object, 
+    # such as a string, tuple, or range.
+    # You can apply an expression or a condition to each element of the iterable object and store the result in the new list.
+    # In this case, the expression is p.info["pid"], which means you want to get the process id (pid) of each element.
+    # The element is p, which is a variable that represents each process object returned 
+    # by psutil.process_iter(attrs=["pid", "name"]).
+    # The iterable is psutil.process_iter(attrs=["pid", "name"]), which is a function from the psutil module that 
+    # returns an iterator of all running processes on your system.
+    # The attrs=["pid", "name"] argument means you only want to get the pid and name attributes of each process, 
+    # which makes the function faster and more efficient.
+    # The condition is if program in p.info["name"], which means you only want to include the processes 
+    # whose name contains the value of the program variable, which is one of the program names in your program_list.
+    # So, what this line of code does is that it creates a new list called pids, which contains the pids of all the 
+    # processes whose name matches one of the program names in your program_list.
+    # For example, if one of the program names is "steam", then the pids list will contain 
+    # the pids of all the processes whose name contains "steam", such as "steam.exe" or "steamwebhelper.exe".
+    # This way, you can find and kill the processes that you want to terminate.
+    pids = [p.info["pid"] for p in psutil.process_iter(attrs=["pid", "name"]) if program in p.info["name"]]
+    # if there are any process ids
+    if pids:
+        # loop through the process ids
+        for pid in pids:
+            # kill the process
+            os.system(f"taskkill /F /PID {pid}")
+            # print the name and pid of the terminated program
+            print(f"Terminated {program} with pid {pid}")
+    # otherwise
+    else:
+        # print the program is not running
+        print(f"{program} is not running")
