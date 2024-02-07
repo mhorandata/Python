@@ -1,0 +1,92 @@
+#Code using pandas to analize Pokemon stat data
+import pandas as pd
+
+# Specify the encoding parameter as 'latin1' or 'ISO-8859-1' to handle special characters
+data = pd.read_csv(r"C:\Users\mhora\Desktop\Coding\Python\Pokemon\Pokemon_List.csv", encoding='latin1')
+
+# Count the occurrences of Grass type in both "Type 1" and "Type 2" columns
+total_count = max(data["Number"])
+
+# Find the row with the maximum Special Attack
+max_sp_atk_row = data[data['Sp. Atk'] == data['Sp. Atk'].max()]
+# Get the name of the Pokémon with the maximum Special Attack
+pokemon_name_max_sp_atk = max_sp_atk_row['Name'].values[0]
+
+# Find the row with the maximum Special Defense
+max_sp_def_row = data[data['Sp. Def'] == data['Sp. Def'].max()]
+# Get the name of the Pokémon with the maximum Special Defense
+pokemon_name_max_sp_def = max_sp_def_row['Name'].values[0]
+
+# Find the row with the maximum HP
+max_hp_row = data[data['HP'] == data['HP'].max()]
+# Get the name of the Pokémon with the maximum HP
+pokemon_name_max_hp = max_hp_row['Name'].values[0]
+
+# Find the row with the maximum Attack
+max_attack_row = data[data['Attack'] == data['Attack'].max()]
+# Get the name of the Pokémon with the maximum Attack
+pokemon_name_max_attack = max_attack_row['Name'].values[0]
+
+# Find the row with the maximum Defense
+max_defense_row = data[data['Defense'] == data['Defense'].max()]
+# Get the name of the Pokémon with the maximum Defense
+pokemon_name_max_defense = max_defense_row['Name'].values[0]
+
+# Find the row with the maximum Speed
+max_speed_row = data[data['Speed'] == data['Speed'].max()]
+# Get the name of the Pokémon with the maximum Speed
+pokemon_name_max_speed = max_speed_row['Name'].values[0]
+
+ground_type = len(data[(data["Type 1"] == "Ground") | (data["Type 2"] == "Ground")])
+flying_type = len(data[(data["Type 1"] == "Flying") | (data["Type 2"] == "Flying")])
+fire_type = len(data[(data["Type 1"] == "Fire") | (data["Type 2"] == "Fire")])
+water_type = len(data[(data["Type 1"] == "Water") | (data["Type 2"] == "Water")])
+dragon_type = len(data[(data["Type 1"] == "Dragon") | (data["Type 2"] == "Dragon")])
+steel_type = len(data[(data["Type 1"] == "Steel") | (data["Type 2"] == "Steel")])
+fighting_type = len(data[(data["Type 1"] == "Fighting") | (data["Type 2"] == "Fighting")])
+bug_type = len(data[(data["Type 1"] == "Bug") | (data["Type 2"] == "Bug")])
+fairy_type = len(data[(data["Type 1"] == "Fairy") | (data["Type 2"] == "Fairy")])
+electric_type = len(data[(data["Type 1"] == "Electric") | (data["Type 2"] == "Electric")])
+ghost_type = len(data[(data["Type 1"] == "Ghost") | (data["Type 2"] == "Ghost")])
+normal_type = len(data[(data["Type 1"] == "Normal") | (data["Type 2"] == "Normal")])
+poison_type = len(data[(data["Type 1"] == "Poison") | (data["Type 2"] == "Poison")])
+grass_type = len(data[(data["Type 1"] == "Grass") | (data["Type 2"] == "Grass")])
+psychic_type = len(data[(data["Type 1"] == "Psychic") | (data["Type 2"] == "Psychic")])
+rock_type = len(data[(data["Type 1"] == "Rock") | (data["Type 2"] == "Rock")])
+dark_type = len(data[(data["Type 1"] == "Dark") | (data["Type 2"] == "Dark")])
+ice_type = len(data[(data["Type 1"] == "Ice") | (data["Type 2"] == "Ice")])
+
+all_Types = {
+    "Pokemon Types": ["Ground", "Flying", "Fire", "Water", "Dragon", "Steel", "Fighting", "Bug", "Fairy",
+                      "Electric", "Ghost", "Normal", "Poison", "Grass", "Psychic", "Rock", "Dark", "Ice"],
+    "Count": [ground_type, flying_type, fire_type, water_type, dragon_type, steel_type, fighting_type,
+              bug_type,fairy_type, electric_type, ghost_type, normal_type, poison_type, grass_type, psychic_type,
+              rock_type, dark_type, ice_type]
+}
+
+
+print("Total Pokémon Count:", total_count)
+print("Pokemon with the highest special attack:", pokemon_name_max_sp_atk)
+print("Pokemon with the highest special defense:", pokemon_name_max_sp_def)
+print("Pokemon with the highest hp:", pokemon_name_max_hp)
+print("Pokemon with the highest attack:", pokemon_name_max_attack)
+print("Pokemon with the highest defense:", pokemon_name_max_defense)
+print("Pokemon with the highest speed:", pokemon_name_max_speed)
+print("Pokémon Types Counts:", all_Types)
+
+
+# Results:
+# Total Pokémon Count: 721
+# Pokemon with the highest special attack: MewtwoMega Mewtwo Y
+# Pokemon with the highest special defense: Shuckle
+# Pokemon with the highest hp: Blissey
+# Pokemon with the highest attack: MewtwoMega Mewtwo X
+# Pokemon with the highest defense: SteelixMega Steelix
+# Pokemon with the highest speed: DeoxysSpeed Forme
+# Pokémon Types Counts: {'Pokemon Types': ['Ground', 'Flying', 'Fire', 'Water', 'Dragon', 'Steel', 'Fighting', 'Bug', 'Fairy', 'Electric', 'Ghost', 'Normal', 'Poison', 'Grass', 'Psychic', 'Rock', 'Dark', 'Ice'], 'Count': [67, 101, 64, 126, 50, 49, 53, 72, 40, 50, 46, 102, 62, 95, 90, 58, 51, 38]}
+#
+# Process finished with exit code 0
+
+
+
+
